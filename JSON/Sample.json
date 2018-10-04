@@ -22,3 +22,27 @@
     "type": "male"
   }
 }
+{
+  "firstName": "Kimberley",
+  "lastName": "Thomas",
+  "age": 28,
+  "address": {
+    "streetAddress": "4419 Ross Street",
+    "city": "Wood River",
+    "state": "IL",
+    "postalCode": "62095"
+  },
+  "phoneNumber": [
+    {
+      "type": "home",
+      "number": "618-254-8586"
+    },
+    {
+      "type": "mobile",
+      "number": "708-267-3678"
+    }
+  ],
+  "gender": {
+    "type": "female"
+  }
+}
