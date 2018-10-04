@@ -21,16 +21,15 @@ function printNames() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+        document.getElementById("demo").innerHTML = myObj.firstname;
     }
   };
-  xhttp.open("GET", "/CIT-261/JSON/Sample.json", true);
+  xhttp.open("GET", "/CIT-261/JSON/Sample.json", true)
   xhttp.send();
-	var str = "";
-	for (i = 0; i < xhttp.responseText.firstname.length; i++) {
-		str += xhttp.responseText.firstname + xhttp.responseText.lastname + "<br>";
-	}
-	document.getElementById("demo").innerHTML = "Names: <br>" + str;
+
 }
+
 </script>
 
 <button type="button" onclick="loadJSON()">Get JSON</button>
