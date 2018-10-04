@@ -15,9 +15,25 @@ function loadJSON() {
   xhttp.open("GET", "/CIT-261/JSON/Sample.json", true)
   xhttp.send();
 }
+		
+		
+function printNames() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200)
+  };
+  xhttp.open("GET", "/CIT-261/JSON/Sample.json", true)
+	var str = "";
+	for (i = 0; i < firstname; i++) {
+		str += firstname + lastname[i] + "<br>";
+	}
+	document.getElementById("demo").innerHTML = "Children: <br>" + str;
+}
+
 </script>
 
-<button type="button" onclick="loadJSON()">Change Content</button><br>
+<button type="button" onclick="loadJSON()">Get JSON</button>
+<button type="button" onclick="printNames()">Get Names</button>
 	
 <pre id="demo">Let AJAX change this text.</pre>
 
