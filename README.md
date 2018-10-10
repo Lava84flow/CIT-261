@@ -9,7 +9,7 @@ JavaScript Objects - Object Creation Functions, Inheritance, Properties, Methods
 JSON Parse, Stringify\
 
 
-<[AJAX requesting a JSON file](https://lava84flow.github.io/CIT-261/JSON/RequestJSON.HTML)>
+[AJAX requesting a JSON file](https://lava84flow.github.io/CIT-261/JSON/RequestJSON.HTML)
 
 <https://lava84flow.github.io/CIT-261/JSON/RequestJSON.HTML>
 
