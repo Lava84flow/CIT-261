@@ -12,10 +12,10 @@
 [AJAX requesting a JSON file](https://lava84flow.github.io/CIT-261/JSON/RequestJSON.HTML)
 
 
-[Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects](https://lava84flow.github.io/CIT-261/JavaScript/localhost-API_Storage _ And_Arrays.HTML)
+[Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects](https://lava84flow.github.io/CIT-261/JavaScript/localhost-API_Storage_And_Arrays.HTML)
 
 
-[DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.](https://lava84flow.github.io/CIT-261/JavaScript/DOM_ Manipulation.HTML)
+[DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.](https://lava84flow.github.io/CIT-261/JavaScript/DOM_Manipulation.HTML)
 
 
 [Manipulating CSS Class Properties Using JavaScript](https://lava84flow.github.io/CIT-261/CSS/Manipulate_CSS_Using_JS.HTML)
