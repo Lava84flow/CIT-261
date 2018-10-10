@@ -1,42 +1,39 @@
 # CIT-261
 
-JavaScript - Conditional Statements, Functions, Variables, Parameters, Loops, Arrays, Associative Arrays\
+[JavaScript - Conditional Statements, Functions, Variables, Parameters, Loops, Arrays, Associative Arrays](https://lava84flow.github.io/CIT-261/JavaScript/JS_Functions_And_Variables.HTML)
 
 
-JavaScript Objects - Object Creation Functions, Inheritance, Properties, Methods, Instantiation\
+[JavaScript Objects - Object Creation Functions, Inheritance, Properties, Methods, Instantiation](https://lava84flow.github.io/CIT-261/JavaScript/JS_Objects_And_Classes.HTML)
 
 
-JSON Parse, Stringify\
+[JSON Parse, Stringify](https://lava84flow.github.io/CIT-261//JSON/JSON_Parse_Stringify.HTML)
 
 
 [AJAX requesting a JSON file](https://lava84flow.github.io/CIT-261/JSON/RequestJSON.HTML)
 
-<https://lava84flow.github.io/CIT-261/JSON/RequestJSON.HTML>
+
+[Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects](https://lava84flow.github.io/CIT-261/JavaScript/localhost-API_Storage _ And_Arrays.HTML)
 
 
-Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects\
+[DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.](https://lava84flow.github.io/CIT-261/JavaScript/DOM_ Manipulation.HTML)
 
 
-DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.\
+[Manipulating CSS Class Properties Using JavaScript](https://lava84flow.github.io/CIT-261/CSS/Manipulate_CSS_Using_JS.HTML)
 
 
-Manipulating CSS Class Properties Using JavaScript\
+[Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript](https://lava84flow.github.io/CIT-261/CSS/CSS3_Transition_And_Animation_JS.HTML)
 
 
-Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript\
+[Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events](https://lava84flow.github.io/CIT-261/JavaScript/JS_Mobile_Events.HTML)
 
 
-Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events\
+[HTML5 Tags - Video, Audio, and Canvas](https://lava84flow.github.io/CIT-261//HTML/HMTL5-Tags.HTML)
 
 
-HTML5 Tags - Video, Audio, and Canvas\
+[Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries](https://lava84flow.github.io/CIT-261/CSS/CSS3-Transitions.HTML)
 
 
-Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries\
+[Designing, Defining, and Triggering CSS3 Transforms without Custom Libraries](https://lava84flow.github.io/CIT-261/CSS/CSS3-Transforms.HTML)
 
 
-Designing, Defining, and Triggering CSS3 Transforms without Custom Libraries\
-
-
-Designing, Defining, and Triggering CSS3 Animations without Custom Libraries\
-
+[Designing, Defining, and Triggering CSS3 Animations without Custom Libraries](https://lava84flow.github.io/CIT-261/CSS/CSS3-Animations.HTML)
