@@ -10,7 +10,7 @@ JSON Parse, Stringify\
 
 
 AJAX requesting a JSON file\
-<a href="https://lava84flow.github.io/CIT-261/JSON/RequestJSON.HTML">https://lava84flow.github.io/CIT-261/JSON/RequestJSON.HTML</a>
+<https://lava84flow.github.io/CIT-261/JSON/RequestJSON.HTML>
 
 Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects\
 
