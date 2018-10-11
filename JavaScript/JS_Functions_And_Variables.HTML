@@ -3,4 +3,32 @@ layout: default
 ---
 <body>
 	<h1>JavaScript Functions And Variables</h1>
+	
+	<form name="isEven" onsubmit="return isEven()" method="post">
+		Stick a number here:<br>
+		<input type="text" name="number" id="numb">
+		<input type="submit" value="Submit">
+	</form>
+	
+	<p id="demo">
+		
+	</p>
+	
+	<script>
+
+		function isEven() {
+			var x = document.getElementById("numb").value;
+			text;
+			if (x % 2 == 0)
+			{
+				text = "Number Is Even";
+			}
+			else
+			{
+				text = "Number Is Not Even";
+			}
+			document.getElementById("demo").innerHTML = text;
+		}
+
+	</script>
 </body>
