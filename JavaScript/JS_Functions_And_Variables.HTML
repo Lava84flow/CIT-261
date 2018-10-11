@@ -22,9 +22,13 @@ layout: default
 			{
 				text = "Number Is Even";
 			}
-			else
+			else if(x % 2 == 1)
 			{
 				text = "Number Is Not Even";
+			}
+			else
+			{
+				text = "Please Input A Number"
 			}
 			document.getElementById("demo").innerHTML = text;
 		}
