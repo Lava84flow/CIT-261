@@ -4,6 +4,35 @@ layout: default
 <body>
 	<h1>JavaScript Functions And Variables</h1>
 	
+	
+	<h3>Conditional Statments</h3>
+	
+	<div>
+		<pre>
+			<code>
+				function isEven() {
+					var x = document.getElementById("numb").value, 
+					text;
+					// ask why this comes out as even when nothing is entered how to fix it
+					if (x % 2 == 0)
+					{
+						text = "Number Is Even";
+					}
+					else if(x % 2 == 1)
+					{
+						text = "Number Is Not Even";
+					}
+					else
+					{
+						text = "Please Input A Number"
+					}
+					document.getElementById("demo").innerHTML = text;
+				}
+			</code>
+		</pre>
+	</div>
+	
+	<form>
 		Stick a number here:<br>
 		<input type="text" id="numb">
 		<button type="button" onclick="isEven()">Submit</button>
@@ -18,6 +47,7 @@ layout: default
 		function isEven() {
 			var x = document.getElementById("numb").value, 
 			text;
+			// ask why this comes out as even when nothing is entered how to fix it
 			if (x % 2 == 0)
 			{
 				text = "Number Is Even";
