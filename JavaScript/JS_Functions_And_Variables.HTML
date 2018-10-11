@@ -6,28 +6,79 @@ layout: default
 	
 <h1>JavaScript Functions And Variables</h1>
 	
-	<h2>
-		<a href="#conditional">Conditional Statements</a> --- 
-		<a href="#function">Functions</a> --- 
-		<a href="#variable">Variables</a><br>
-		<a href="#parameter">Parameters</a> ---
-		<a href="#loop">Loops</a> ---  
-		<a href="#array">Arrays</a> --- 
-		<a href="#associative">Associative Arrays</a>
-	</h2>
+<h2>
+	<a href="#conditional">Conditional Statements</a> --- 
+	<a href="#function">Functions</a> --- 
+	<a href="#variable">Variables</a><br>
+	<a href="#parameter">Parameters</a> ---
+	<a href="#loop">Loops</a> ---  
+	<a href="#array">Arrays</a> --- 
+	<a href="#associative">Associative Arrays</a>
+</h2>
 	
-	<h3 id=variable>Variables</h3>
+<br>
+
+<div>
+	<h3 id="variable">Variables</h3>
 	
+		<!-- Add the info for Variables here-->
+	<pre>
+		<code>
+var x = 5;
+var y = 6;
+var total = x + y;			
+		</code>
+	</pre>
+	
+  <form>
+		Stick some numbers here:<br>
+		<input type="text" id="varNum1"><br>
+		<input type="text" id="varNum2">
+		<button type="button" onclick="vardemo()">Submit</button>
+	</form>
+	
+	<script>
+		function vardemo() {
+			var x = document.getElementById("varNum1").value;
+			var y = document.getElementById("varNum2").value;
+			var total = x + y;
+			document.getElementById("varOut").innerHTML =
+			"The total is: " + total;
+		}
+	</script>
+
+	<pre id="varOut">
+Variables Output
+	</pre>
+	
+	<a href="#top">Back To Top</a>
+</div>
+
+<div>
 	<h3 id="function">Functions</h3>
 	
+		<!-- Add the info for Functions here-->
+	
+	
+	<a href="#top">Back To Top</a>
+</div>
+
+<div>	
 	<h3 id="parameter">Parameters</h3>
 	
+		<!-- Add the info for Parameters here-->
+	
+	
+	<a href="#top">Back To Top</a>
+</div>
+
+<div>
 	<h3 id="conditional">Conditional Statments</h3>
 	
-<div class="language-js highlighter-rouge">
-<div class="highlight">
-<pre class="highlight">
-<code>
+		<!-- Add the info for Conditional Statments here-->
+	
+	<pre>
+		<code>
 function isEven() {
 	var x = document.getElementById("numb").value, 
 	text;
@@ -44,12 +95,11 @@ function isEven() {
 	{
 		text = "Please Input A Number"
 	}
-	document.getElementById("demo").innerHTML = text;
+	document.getElementById("conOut").innerHTML = text;
 }
-</code>
-</pre>
-</div>
-</div>
+		</code>
+	</pre>
+
 	
 	<form>
 		Stick a number here:<br>
@@ -57,8 +107,8 @@ function isEven() {
 		<button type="button" onclick="isEven()">Submit</button>
 	</form>
 	
-	<pre id="demo">
-		
+	<pre id="conOut">
+Conditional Statement Output
 	</pre>
 	
 <script>
@@ -79,15 +129,40 @@ function isEven() {
 			{
 				text = "Please Input A Number"
 			}
-			document.getElementById("demo").innerHTML = text;
+			document.getElementById("conOut").innerHTML = text;
 		}
 
 	</script>
 	
+	<a href="#top">Back To Top</a>
+
+</div>
+
+<div>
 	<h3 id="loop">Loops</h3>
 	
+		<!-- Add the info for Loops here-->
+	
+	
+	<a href="#top">Back To Top</a>
+</div>
+	
+<div>
 	<h3 id="array">Arrays</h3>
 	
+		<!-- Add the info for Arrays here-->
+	
+	
+	<a href="#top">Back To Top</a>
+</div>
+	
+<div>
 	<h3 id="associative">Associative Arrays</h3>
+	
+		<!-- Add the info for Associative Arrays here-->
+	
+	
+	<a href="#top">Back To Top</a>
+</div>
 
 </body>
