@@ -22,11 +22,15 @@ layout: default
 	<h3 id="variable">Variables</h3>
 	
 		<!-- Add the info for Variables here-->
-	<pre>
+  <pre>
 		<code>
-var x = 5;
-var y = 6;
-var total = x + y;			
+function varDemo() {
+	var x = parseInt(document.getElementById("varNum1").value);
+	var y = parseInt(document.getElementById("varNum2").value);
+	var total = x + y;
+	document.getElementById("varOut").innerHTML =
+	"The total is: " + total;
+}		
 		</code>
 	</pre>
 	
@@ -34,20 +38,20 @@ var total = x + y;
 		Stick some numbers here:<br>
 		<input type="text" id="varNum1"><br>
 		<input type="text" id="varNum2">
-		<button type="button" onclick="vardemo()">Submit</button>
+		<button type="button" onclick="varDemo()">Submit</button>
 	</form>
 	
 	<script>
-		function vardemo() {
-			var x = document.getElementById("varNum1").value;
-			var y = document.getElementById("varNum2").value;
+		function varDemo() {
+			var x = parseInt(document.getElementById("varNum1").value);
+			var y = parseInt(document.getElementById("varNum2").value);
 			var total = x + y;
 			document.getElementById("varOut").innerHTML =
 			"The total is: " + total;
 		}
 	</script>
 
-	<pre id="varOut">
+  <pre id="varOut">
 Variables Output
 	</pre>
 	
@@ -80,7 +84,7 @@ Variables Output
 	<pre>
 		<code>
 function isEven() {
-	var x = document.getElementById("numb").value, 
+	var x = parseInt(document.getElementById("numb").value), 
 	text;
 	// ask why this comes out as even when nothing is entered and how to fix it
 	if (x % 2 == 0)
@@ -114,9 +118,9 @@ Conditional Statement Output
 <script>
 
 		function isEven() {
-			var x = document.getElementById("numb").value, 
+			var x = parseInt(document.getElementById("numb").value), 
 			text;
-			// ask why this comes out as even when nothing is entered how to fix it
+			// NVM: ask why this comes out as even when nothing is entered how to fix it
 			if (x % 2 == 0)
 			{
 				text = "Number Is Even";
