@@ -7,6 +7,38 @@ layout: default
 <h1>JavaScript Functions And Variables</h1>
 	<h4><a href="https://lava84flow.github.io/CIT-261/">Back To Topics</a></h4>
 	
+<!-- Section Template
+	<pre>
+		<code>
+function Demo() {
+	var x = parseInt(document.getElementById("###Num1").value);
+	var out = x;
+	document.getElementById("###Out").innerHTML =
+	"####" + out;
+}
+		</code>
+	</pre>
+	
+	<form>
+		Stick number here:<br>
+		<input type="text" id="###Num1">
+		<button type="button" onclick="###Demo()">Submit</button>
+	</form>
+	
+	<script>
+		function Demo() {
+			var x = parseInt(document.getElementById("###Num1").value);
+			var out = x + y;
+			document.getElementById("###Out").innerHTML =
+			"####" + ###out;
+		}
+	</script>
+
+	<pre id="varOut">
+#### Output
+	</pre>
+-->
+	
 <h2>
 	<a href="#conditional">Conditional Statements</a> --- 
 	<a href="#function">Functions</a> --- 
@@ -85,7 +117,7 @@ Variables Output
 	<pre>
 		<code>
 function isEven() {
-	var x = parseInt(document.getElementById("numb").value), 
+	var x = parseInt(document.getElementById("conNum1").value), 
 	text;
 	// ask why this comes out as even when nothing is entered and how to fix it
 	if (x % 2 == 0)
@@ -106,11 +138,11 @@ function isEven() {
 	</pre>
 
 	
-	<form>
+  <form>
 		Stick a number here:<br>
-		<input type="text" id="numb">
+		<input type="text" id="conNum1">
 		<button type="button" onclick="isEven()">Submit</button>
-	</form>
+  </form>
 	
 	<pre id="conOut">
 Conditional Statement Output
@@ -119,7 +151,7 @@ Conditional Statement Output
 <script>
 
 		function isEven() {
-			var x = parseInt(document.getElementById("numb").value), 
+			var x = parseInt(document.getElementById("conNum1").value), 
 			text;
 			// NVM: ask why this comes out as even when nothing is entered how to fix it
 			if (x % 2 == 0)
