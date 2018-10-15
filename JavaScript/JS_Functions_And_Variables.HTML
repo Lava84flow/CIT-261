@@ -217,30 +217,35 @@ Conditional Statement Output
 	
 	<pre>
 		<code>
-function ###Demo() {
-	var x = parseInt(document.getElementById("###Num1").value);
-	var out = x;
-	document.getElementById("###Out").innerHTML =
-	"####" + out;
+function loopDemo() {
+	// add all of the numbers in sequence starting from 0 to the inputted number
+	var forout = 0;
+	var i;
+	var x = parseInt(document.getElementById("loopNum1").value);
+	for (i = 0; i &lt;= x; i++) {
+		forout += i ;
+	}	
+	document.getElementById("forOut").innerHTML = "The total is " + forout;
 }
 		</code>
 	</pre>
 	
 	<form>
 		Stick a number here:<br>
-		<input type="text" id="loopNum1">
-		<button type="button" onclick="loopDemo()">Submit</button>
+	  <input type="text" id="loopNum1">
+	  <button type="button" onclick="loopDemo()">Submit</button>
 	</form>
 	
 	<script>
-		function loopDemo() { 			
-			var forout = "";
-			var i = 0;
+		function loopDemo() {
+			// add all of the numbers in sequence starting from 0 to the inputted number
+			var forout = 0;
+			var i;
 			var x = parseInt(document.getElementById("loopNum1").value);
-			for (i <= x; i++) {
-				forout += "The number is " + i + "<br>";
+			for (i = 0; i <= x; i++) {
+				forout += i ;
 			}	
-			document.getElementById("forOut").innerHTML = forout;
+			document.getElementById("forOut").innerHTML = "The total is " + forout;
 		}
 	</script>
 
