@@ -227,27 +227,24 @@ function ###Demo() {
 	</pre>
 	
 	<form>
-		Stick number here:<br>
+		Stick a number here:<br>
 		<input type="text" id="loopNum1">
 		<button type="button" onclick="loopDemo()">Submit</button>
 	</form>
 	
 	<script>
-		function loopDemo() {
-			// add total of all number from 0 to inuput with a loop 			
+		function loopDemo() { 			
+			var forout = "";
+			var i = 0;
 			var x = parseInt(document.getElementById("loopNum1").value);
-			var y;
-			for (i = 0; i <= x ; i + y  ) {
-    			 y;
-			}
-			
-			var out = y;
-			document.getElementById("loopOut").innerHTML =
-			"The total is " + loopout;
+			for (i <= x; i++) {
+				forout += "The number is " + i + "<br>";
+			}	
+			document.getElementById("forOut").innerHTML = forout;
 		}
 	</script>
 
-	<pre id="loopOut">
+	<pre id="forOut">
 Loops Output
 	</pre>
 	
