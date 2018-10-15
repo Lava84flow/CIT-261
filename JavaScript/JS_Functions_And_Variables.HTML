@@ -262,6 +262,35 @@ Loops Output
 	
 		<!-- Add the info for Arrays here-->
 	
+	<pre>
+		<code>
+function arrDemo() {
+	var x = parseInt(document.getElementById("arrNum1").value);
+	var out = x + y;
+	document.getElementById("arrOut").innerHTML =
+	"####" + arrout;
+}
+		</code>
+	</pre>
+	
+	<form>
+		Stick number here:<br>
+		<input type="text" id="arrNum1">
+		<button type="button" onclick="arrDemo()">Submit</button>
+	</form>
+	
+	<script>
+		function arrDemo() {
+			var x = parseInt(document.getElementById("arrNum1").value);
+			var out = x + y;
+			document.getElementById("arrOut").innerHTML =
+			"####" + arrout;
+		}
+	</script>
+
+	<pre id="arrOut">
+Array Output
+	</pre>
 	
 	<a href="#top">Back To Top</a>
 </div>
