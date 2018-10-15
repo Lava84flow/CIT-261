@@ -10,7 +10,7 @@ layout: default
 <!-- Section Template
 	<pre>
 		<code>
-function Demo() {
+function ###Demo() {
 	var x = parseInt(document.getElementById("###Num1").value);
 	var out = x;
 	document.getElementById("###Out").innerHTML =
@@ -34,7 +34,7 @@ function Demo() {
 		}
 	</script>
 
-	<pre id="varOut">
+	<pre id="###Out">
 #### Output
 	</pre>
 -->
@@ -95,7 +95,41 @@ Variables Output
 	<h3 id="function">Functions</h3>
 	
 		<!-- Add the info for Functions here-->
+	<pre>
+		<code>
+function red() {
+	document.getElementById("funOut").innerHTML =
+	"You go down the rabbit hole.";
+}
+
+function blue() {
+	document.getElementById("funOut").innerHTML =
+	"You wake up in bed.";
+}
+		</code>
+	</pre>
 	
+	<form>
+		Click a button:<br>
+		<button type="button" onclick="red()">Red Pill</button>
+		<button type="button" onclick="blue()">Blue Pill</button>
+	</form>
+	
+	<script>
+		function red() {
+			document.getElementById("funOut").innerHTML =
+			"You go down the rabbit hole.";
+		}
+		
+		function blue() {
+			document.getElementById("funOut").innerHTML =
+			"You wake up in bed.";
+		}
+	</script>
+
+	<pre id="funOut">
+Function Output
+	</pre>	
 	
 	<a href="#top">Back To Top</a>
 </div>
