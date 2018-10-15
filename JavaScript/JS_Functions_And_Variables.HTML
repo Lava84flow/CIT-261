@@ -26,7 +26,7 @@ function ###Demo() {
 	</form>
 	
 	<script>
-		function Demo() {
+		function ###Demo() {
 			var x = parseInt(document.getElementById("###Num1").value);
 			var out = x + y;
 			document.getElementById("###Out").innerHTML =
@@ -95,6 +95,7 @@ Variables Output
 	<h3 id="function">Functions</h3>
 	
 		<!-- Add the info for Functions here-->
+	
 	<pre>
 		<code>
 function red() {
@@ -213,6 +214,42 @@ Conditional Statement Output
 	<h3 id="loop">Loops</h3>
 	
 		<!-- Add the info for Loops here-->
+	
+	<pre>
+		<code>
+function ###Demo() {
+	var x = parseInt(document.getElementById("###Num1").value);
+	var out = x;
+	document.getElementById("###Out").innerHTML =
+	"####" + out;
+}
+		</code>
+	</pre>
+	
+	<form>
+		Stick number here:<br>
+		<input type="text" id="loopNum1">
+		<button type="button" onclick="loopDemo()">Submit</button>
+	</form>
+	
+	<script>
+		function loopDemo() {
+			// add total of all number from 0 to inuput with a loop 			
+			var x = parseInt(document.getElementById("loopNum1").value);
+			var y;
+			for (i = 0; i <= x ; i + y  ) {
+    			 y;
+			}
+			
+			var out = y;
+			document.getElementById("loopOut").innerHTML =
+			"The total is " + loopout;
+		}
+	</script>
+
+	<pre id="loopOut">
+Loops Output
+	</pre>
 	
 	
 	<a href="#top">Back To Top</a>
