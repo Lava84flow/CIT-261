@@ -265,26 +265,25 @@ Loops Output
 	<pre>
 		<code>
 function arrDemo() {
-	var x = parseInt(document.getElementById("arrNum1").value);
-	var out = x + y;
-	document.getElementById("arrOut").innerHTML =
-	"####" + arrout;
+
+	var fruit = ["Bananas", "Oranges", "Apples", "Mangos", "Watermelons", "Dragonfruit", "Grapes", "Pears", "Pumpkins",<br> 		"Elderberries", "Papayas", "Salmonberries", "Huckleberries", "Apricots", "Avocado", "Peaches", "Chilies",<br>		"Honeydews", "Jujubes", "Figs", "Jackfruit", "Nectarines", "Pineapples", "Strawberries", "Limes"];
+	var x = Math.floor(Math.random() * fruits.length);
+	document.getElementById("arrOut").innerHTML = "You Picked some " + fruit[x]; 
 }
 		</code>
 	</pre>
 	
-	<form>
-		Stick number here:<br>
-		<input type="text" id="arrNum1">
-		<button type="button" onclick="arrDemo()">Submit</button>
+  <form>
+		Hit the button:<br>
+		<button type="button" onclick="arrDemo()">Pick Fruit</button>
 	</form>
 	
 	<script>
 		function arrDemo() {
-			var x = parseInt(document.getElementById("arrNum1").value);
-			var out = x + y;
-			document.getElementById("arrOut").innerHTML =
-			"####" + arrout;
+
+			var fruits = ["Bananas", "Oranges", "Apples", "Mangos", "Watermelons", "Dragonfruit", "Grapes", "Pears", "Pumpkins", "Elderberries", "Papayas", "Salmonberries", "Huckleberries", "Apricots", "Avocado", "Peaches", "Chilies", "Honeydews", "Jujubes", "Figs", "Jackfruit", "Nectarines", "Pineapples", "Strawberries", "Limes"];
+			var x = Math.floor(Math.random() * fruits.length);
+			document.getElementById("arrOut").innerHTML = "You picked some " + fruits[x]; 
 		}
 	</script>
 
