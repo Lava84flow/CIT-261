@@ -265,7 +265,6 @@ Loops Output
 	<pre>
 		<code>
 function arrDemo() {
-
 	var fruit = ["Bananas", "Oranges", "Apples", "Mangos", "Watermelons", "Dragonfruit", "Grapes", "Pears", "Pumpkins",<br> 		"Elderberries", "Papayas", "Salmonberries", "Huckleberries", "Apricots", "Avocado", "Peaches", "Chilies",<br>		"Honeydews", "Jujubes", "Figs", "Jackfruit", "Nectarines", "Pineapples", "Strawberries", "Limes"];
 	var x = Math.floor(Math.random() * fruits.length);
 	document.getElementById("arrOut").innerHTML = "You Picked some " + fruit[x]; 
@@ -298,6 +297,34 @@ Array Output
 	<h3 id="associative">Associative Arrays</h3>
 	
 		<!-- Add the info for Associative Arrays here-->
+	
+	<p>
+		Turns out, Javascript can't acatully use associative arrays. Which means Named Indexes by the way, it has to use Numbered Indexes. However JavaScript Objects <strong>do</strong> use Named Indexes, but we'll get to them later.<br>
+	</p>
+	
+	<p>This one works just fine:</p>
+	<pre>
+		<code>
+var person = [];
+person[0] = "John";
+person[1] = "Doe";
+person[2] = 46;
+var x = person.length;         // person.length will return 3
+var y = person[0];             // person[0] will return "John" 
+		</code>
+	</pre>
+	
+	<p>This one just breaks everything:</p>
+	<pre>
+		<code>
+var person = [];
+person[0] = "John";
+person[1] = "Doe";
+person[2] = 46;
+var x = person.length;         // person.length will return 3
+var y = person[0];             // person[0] will return "John" 
+		</code>
+	</pre>
 	
 	
 	<a href="#top">Back To Top</a>
