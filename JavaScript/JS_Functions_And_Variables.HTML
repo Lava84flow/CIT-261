@@ -396,11 +396,11 @@ var y = person[0];             // person[0] will return "John"
 	<pre>
 		<code>
 var person = [];
-person[0] = "John";
-person[1] = "Doe";
-person[2] = 46;
-var x = person.length;         // person.length will return 3
-var y = person[0];             // person[0] will return "John" 
+person["firstName"] = "John";
+person["lastName"] = "Doe";
+person["age"] = 46;
+var x = person.length;         // person.length will return 0
+var y = person[0];             // person[0] will return undefined 
 		</code>
 	</pre>
 	
