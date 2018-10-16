@@ -139,6 +139,84 @@ Function Output
 	<h3 id="parameter">Parameters</h3>
 	
 		<!-- Add the info for Parameters here-->
+	<pre><code>
+function parSetup() {
+	var w = parseInt(document.getElementById("parNum1").value);
+	var x = parseInt(document.getElementById("parNum2").value);
+	var y = parseInt(document.getElementById("parNum3").value);
+	var z = parseInt(document.getElementById("parNum4").value);
+	var max = parMax(w,x,y,z);
+	var sum = parSum(w,x,y,z);
+	document.getElementById("parOut").innerHTML = "The largest number is " + max +  " and the sum is: " + sum
+}
+
+function parMax() {
+
+	var i;
+	var max = -Infinity;
+	for (i = 0; i &lt; arguments.length; i++) {
+	if (arguments[i] &gt; max) {
+	max = arguments[i];
+	}
+	}
+	return max;
+}
+
+function parSum() {
+	var i;
+	var sum = 0;
+	for (i = 0; i &lt; arguments.length; i++) {
+	sum += arguments[i];
+	}
+	return sum;
+}
+		</code></pre>
+	
+	<form>
+		Stick some numbers here:<br>
+		<input type="text" id="parNum1">
+	  <input type="text" id="parNum2"><br>
+	 	<input type="text" id="parNum3">
+  		<input type="text" id="parNum4">
+  		<button type="button" onclick="parSetup()">Submit</button>
+	</form>
+	
+	<script>
+		function parSetup() {
+			var w = parseInt(document.getElementById("parNum1").value);
+			var x = parseInt(document.getElementById("parNum2").value);
+			var y = parseInt(document.getElementById("parNum3").value);
+			var z = parseInt(document.getElementById("parNum4").value);
+			var max = parMax(w,x,y,z);
+			var sum = parSum(w,x,y,z);
+			document.getElementById("parOut").innerHTML = "The largest number is " + max +  " and the sum is: " + sum
+		}
+		
+		function parMax() {
+			
+    		var i;
+    		var max = -Infinity;
+			for (i = 0; i < arguments.length; i++) {
+        	if (arguments[i] > max) {
+			max = arguments[i];
+			}
+			}
+    		return max;
+		}
+		
+		function parSum() {
+    		var i;
+			var sum = 0;
+			for (i = 0; i < arguments.length; i++) {
+			sum += arguments[i];
+			}
+			return sum;
+		}
+	</script>
+
+	<pre id="parOut">
+Parameter Output
+	</pre>
 	
 	
 	<a href="#top">Back To Top</a>
