@@ -24,25 +24,25 @@ layout: default
   	<pre>
 		<code>
 function fugDemo() {
-	document.styleSheets[0].disabled = true;
+	document.styleSheets[1].disabled = true;
 	setTimeout(beauDemo, 5000);
 	console.log("Timer Started");
 }
 
 function beauDemo() {
-	document.styleSheets[0].disabled = false;
+	document.styleSheets[1].disabled = false;
 	console.log("Timer Ended");
 }
 function purpDemo() {
-	var sheet = document.styleSheets[0];
+	var sheet = document.styleSheets[1];
 	sheet.insertRule("pre code { background: #ff00ff;}", 75);
 }
 function purpFixDemo() {
-	var sheet = document.styleSheets[0];
+	var sheet = document.styleSheets[1];
 	sheet.deleteRule(75);
 }
 function valDemo() {
-	var sheet = document.styleSheets[0];
+	var sheet = document.styleSheets[1];
 	var x = document.getElementById("valBox").value;
 	if(x === "") {
 		sheet.insertRule("input[type=text] { background-color: #ff0000;}", 76);
@@ -64,25 +64,25 @@ function valDemo() {
 	
 	<script>
 		function fugDemo() {
-			document.styleSheets[0].disabled = true;
+			document.styleSheets[1].disabled = true;
 			setTimeout(beauDemo, 5000);
 			console.log("Timer Started");
 		}
 		
 		function beauDemo() {
-			document.styleSheets[0].disabled = false;
+			document.styleSheets[1].disabled = false;
 			console.log("Timer Ended");
 		}
 		function purpDemo() {
-			var sheet = document.styleSheets[0];
+			var sheet = document.styleSheets[1];
 			sheet.insertRule("pre code { background: #ff00ff;}", 75);
 		}
 		function purpFixDemo() {
-			var sheet = document.styleSheets[0];
+			var sheet = document.styleSheets[1];
 			sheet.deleteRule(75);
 		}
 		function valDemo() {
-			var sheet = document.styleSheets[0];
+			var sheet = document.styleSheets[1];
 			var x = document.getElementById("valBox").value;
 			if(x === "") {
 				sheet.insertRule("input[type=text] { background-color: #ff0000;}", 76);
