@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<link href="../style.css" rel="stylesheet" type="text/css">
+<!--<link href="../style.css" rel="stylesheet" type="text/css">-->
 <body>
 	
 	<h1>Manipulating CSS3 Classes with JavaScript</h1>
@@ -24,27 +24,27 @@ layout: default
   	<pre>
 		<code>
 function fugDemo() {
-	document.styleSheets[1].disabled = true;
+	document.styleSheets[0].disabled = true;
 	setTimeout(beauDemo, 5000);
 	console.log("Timer Started");
 }
 
 function beauDemo() {
-	document.styleSheets[1].disabled = false;
+	document.styleSheets[0].disabled = false;
 	console.log("Timer Ended");
 }
 function purpDemo() {
-	var sheet = document.styleSheets[1];
+	var sheet = document.styleSheets[0];
 	sheet.insertRule("pre code { background: #ff00ff;}", 75);
 }
 function purpFixDemo() {
-	var sheet = document.styleSheets[1];
+	var sheet = document.styleSheets[0];
 	sheet.deleteRule(75);
 }
 function valDemo() {
-	var sheet = document.styleSheets[1];
+	var sheet = document.styleSheets[0];
 	var x = document.getElementById("valBox").value;
-	if(x === "") {
+	if(x == "") {
 		sheet.insertRule("input[type=text] { background-color: #ff0000;}", 76);
 	}
 	else {
