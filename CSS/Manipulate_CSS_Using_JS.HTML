@@ -1,8 +1,68 @@
 ---
 layout: default
 ---
+<link href="../style.css" rel="stylesheet" type="text/css">
 <body>
 	<h1>Manipulating CSS3 Classes with JavaScript</h1>
 	<h4><a href="https://lava84flow.github.io/CIT-261/">Back To Topics</a></h4>
 	
+	<h2>
+		<a href="#demo">Demonstrations</a> ---
+		<a href="#validation">Validations</a> <!----- 
+		<a href="#other">Other Uses</a> --- 
+		<a href="#stupid">Stupid Ideas</a><br>-->
+	</h2>
+	<br>
+	<div>
+	  <h3 id="demo">Demonstrations</h3>
+
+		<!-- Add the info for Demonstrations here-->
+		<!-- Dont forgot to mention that this is simaler but sperate from the DOM manipulations -->
+		
+	  <pre>
+		<code>
+function varDemo() {
+	var x = parseInt(document.getElementById("varNum1").value);
+	var y = parseInt(document.getElementById("varNum2").value);
+	var total = x + y;
+	document.getElementById("varOut").innerHTML =
+	"The total is: " + total;
+}		
+		</code>
+	</pre>
+	
+  <form>
+		Poke Some Buttons<br>
+		<button type="button" onclick="fugDemo()">Fugly-ify</button>
+	</form>
+	
+	<script>
+		function fugDemo() {
+			document.styleSheets[0].disabled = true;
+			setTimeout(beauDemo, 5000);
+			
+		}
+		function beauDemo() {
+			document.styleSheets[0].disabled = false;
+		}
+	</script>
+
+  <pre id="varOut">
+Variables Output
+	</pre>
+	
+	<a href="#top">Back To Top</a>
+	</div>
+	<br>
+	<div>
+		<h3 id="other">Other Uses</h3>
+
+		<!-- Add the info for Other Uses here-->
+	</div>
+	<br>
+	<div>
+		<h3 id="stupid">Stupid Ideas</h3>
+
+		<!-- Add the info for Stupid Ideas here-->
+	</div>
 </body>
