@@ -3,66 +3,128 @@ layout: default
 ---
 <link href="../style.css" rel="stylesheet" type="text/css">
 <body>
+	
 	<h1>Manipulating CSS3 Classes with JavaScript</h1>
 	<h4><a href="https://lava84flow.github.io/CIT-261/">Back To Topics</a></h4>
 	
 	<h2>
 		<a href="#demo">Demonstrations</a> ---
-		<a href="#validation">Validations</a> <!----- 
+		<a href="#validation">Validations</a> <!-- --- 
 		<a href="#other">Other Uses</a> --- 
-		<a href="#stupid">Stupid Ideas</a><br>-->
+		<a href="#stupid">Stupid Ideas</a><br> -->
 	</h2>
-	<br>
-	<div>
-	  <h3 id="demo">Demonstrations</h3>
+
+<br>
+<div>
+	<h3 id="demo">Demonstrations</h3>
 
 		<!-- Add the info for Demonstrations here-->
 		<!-- Dont forgot to mention that this is simaler but sperate from the DOM manipulations -->
 		
-	  <pre>
+  	<pre>
 		<code>
-function varDemo() {
-	var x = parseInt(document.getElementById("varNum1").value);
-	var y = parseInt(document.getElementById("varNum2").value);
-	var total = x + y;
-	document.getElementById("varOut").innerHTML =
-	"The total is: " + total;
-}		
+function fugDemo() {
+	document.styleSheets[0].disabled = true;
+	setTimeout(beauDemo, 5000);
+}
+
+function beauDemo() {
+	document.styleSheets[0].disabled = false;
+		}
 		</code>
 	</pre>
 	
-  <form>
-		Poke Some Buttons<br>
+  	<form>
+		Poke Them<br>
+		<input type="text" id="valBox">
 		<button type="button" onclick="fugDemo()">Fugly-ify</button>
+		<button type="button" onclick="purpDemo()">Purple</button>
+		<button type="button" onclick="purpFixDemo()">Not Purple</button>
+		<button type="button" onclick="valDemo()">Submit</button>
 	</form>
 	
 	<script>
 		function fugDemo() {
 			document.styleSheets[0].disabled = true;
 			setTimeout(beauDemo, 5000);
-			
+			console.log("Timer Started");
 		}
+		
 		function beauDemo() {
 			document.styleSheets[0].disabled = false;
+			console.log("Timer Ended");
+		}
+		function purpDemo() {
+			var sheet = document.styleSheets[0];
+			sheet.insertRule("pre code { background: #ff00ff;}", 75);
+		}
+		function purpFixDemo() {
+			var sheet = document.styleSheets[0];
+			sheet.deleteRule(75);
+		}
+		function valDemo() {
+			var sheet = document.styleSheets[0];
+			var x = document.getElementById("valBox").value;
+			if(x === "") {
+				sheet.insertRule("input[type=text] { background-color: #ff0000;}", 76);
+			}
+			else {
+				sheet.deleteRule(76);
+			}
 		}
 	</script>
+	
+	<br>
+	
+<!--	<pre>
+		<code>
+function fugDemo() {
+	document.styleSheets[0].disabled = true;
+	setTimeout(beauDemo, 5000);
+}
 
-  <pre id="varOut">
-Variables Output
+function beauDemo() {
+	document.styleSheets[0].disabled = false;
+		}
+		</code>
 	</pre>
 	
-	<a href="#top">Back To Top</a>
-	</div>
+  	<form>
+		Poke It<br>
+		<button type="button" onclick="infoDemo()">CSS Info</button>
+	</form>
+	
+	<script>
+		function infoDemo() {
+			var dump = document.styleSheets[0];
+			document.getElementById("infoOut").innerHTML = dump;			
+		}
+
+	</script>
+		
+	<pre id="infoOut">
+Style sheet Info
+	</pre>-->
+	
 	<br>
-	<div>
-		<h3 id="other">Other Uses</h3>
+	<a href="#top">Back To Top</a>
+</div>
+<br>
+<div>
+	<h3 id="validation">Validations</h3>
+
+		<!-- Add the info for Validations here-->
+</div>
+<br>
+<!--<div>
+	<h3 id="other">Other Uses</h3>-->
 
 		<!-- Add the info for Other Uses here-->
-	</div>
-	<br>
-	<div>
-		<h3 id="stupid">Stupid Ideas</h3>
+<!--</div>-->
+<br>
+<!--<div>
+	<h3 id="stupid">Stupid Ideas</h3>-->
 
 		<!-- Add the info for Stupid Ideas here-->
-	</div>
+	<!--</div>-->
 </body>
