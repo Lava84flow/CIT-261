@@ -1,13 +1,14 @@
 ---
 layout: default
 ---
+<link href="../style.css" rel="stylesheet" type="text/css">
 <body>
 	<h1>JavaScript Objects And Classes</h1>
-	<h4><a href="https://lava84flow.github.io/CIT-261/">Back To Topics</a></h4>
+	<h4><a href="https://lava84flow.github.io/CIT-261/">Back To Topics</a></h4>	
 	
-	<!-- JavaScript Objects - Object Creation Functions, Inheritance, Properties, Methods, Instantiation -->
+<!-- JavaScript Objects - Object Creation Functions, Inheritance, Properties, Methods, Instantiation -->
 	
-	<!-- Section Template
+<!-- Section Template
 	<pre>
 		<code>
 function ###Demo() {
@@ -41,8 +42,8 @@ function ###Demo() {
 	
 <h2>
 	<a href="#creation">Object Creation</a> --- 
-	<a href="#inheritance">Inheritance</a> --- 
-	<a href="#variable">Properties</a> ---
+	<a href="#inheritance">Inheritance</a> <br>
+  	<a href="#variable">Properties</a> ---
 	<a href="#parameter">Methods</a> ---
 	<a href="#loop">Instantiation</a> 
 
@@ -55,9 +56,46 @@ function ###Demo() {
 	
 		<!-- Add the info for Variables here-->
 	
+  <pre>
+		<code>
+function newDemo() {
+	var person = new Object();
+	person.firstName = String(document.getElementById("fName").value);
+	person.lastName = String(document.getElementById("lName").value);
+	person.age = parseInt(document.getElementById("age").value);
+	person.eyeColor = String(document.getElementById("eyeColor").value).toLowerCase(); 
+	document.getElementById("newOut").innerHTML =
+	person.firstName + " " + person.lastName + " is " + person.age + " years old, and has " + person.eyeColor + " eyes.";
+}
+		</code>
+	</pre>
 	
+	<form>
+		Make A Person<br>
+		First Name: <br> <input type="text" id="fName"><br>
+		Last Name: <br> <input type="text" id="lName"><br>
+		Age: <br> <input type="text" id="age"><br>
+		EyeBalls: <br> <input type="text" id="eyeColor">
+	  <button type="button" onclick="newDemo()">Submit</button>
+	</form>
 	
-	<a href="#top">Back To Top</a>
+	<script>
+		function newDemo() {
+			var person = new Object();
+			person.firstName = String(document.getElementById("fName").value);
+			person.lastName = String(document.getElementById("lName").value);
+			person.age = parseInt(document.getElementById("age").value);
+			person.eyeColor = String(document.getElementById("eyeColor").value).toLowerCase(); 
+			document.getElementById("newOut").innerHTML =
+			person.firstName + " " + person.lastName + " is " + person.age + " years old, and has " + person.eyeColor + " eyes.";
+		}
+	</script>
+
+  <pre id="newOut">
+Object Creation Output
+	</pre>
+	
+  <a href="#top">Back To Top</a>
 </div>
 <br>
 <div>
