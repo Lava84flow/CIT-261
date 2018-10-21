@@ -95,12 +95,12 @@ function newDemo() {
 		}
 	</script>
 
-  	<pre id="newOut">
+  <pre id="newOut">
 Object Creation Output
 	</pre>
 	
 	  <pre>
-		<code>
+	  	<code>
 function mulSetup() {
 
 	var leftFName = String(document.getElementById("fName1").value);
@@ -116,7 +116,9 @@ function mulSetup() {
 	var rightDude = new Person(rightFName, rightLName, rightAge, rightEyes);
 
 	document.getElementById("mulOut").innerHTML =
-		leftDude.name() + " and " + rightDude.name() + " are best friends. They are "  + leftDude.age + " and " + rightDude.age + " respectively. " + leftDude.firstName + " has " + leftDude.eyeColor + " eyes, and " + rightDude.firstName + " has " + rightDude.eyeColor + " ones.";
+		leftDude.name() + " and " + rightDude.name() + " are best friends. They are "  + leftDude.age + " and " + rightDude.age + " respectively. "
+ 		+ "&lt;br&gt; +
+		leftDude.firstName + " has " + leftDude.eyeColor + " eyes, and " + rightDude.firstName + " has " + rightDude.eyeColor + " ones.";
 }
 
 // constructor function for people
@@ -160,8 +162,8 @@ function Person(first, last, age, eyecolor) {
 			</tr>
 		  </tbody>
 		</table>
-		<button type="button" onclick="mulSetup()">Submit</button>
-	</form>
+	  <button type="button" onclick="mulSetup()">Submit</button>
+  </form>
 		
 	<script>
 		function mulSetup() {
@@ -179,7 +181,9 @@ function Person(first, last, age, eyecolor) {
 			var rightDude = new Person(rightFName, rightLName, rightAge, rightEyes);
 			
 			document.getElementById("mulOut").innerHTML =
-				leftDude.name() + " and " + rightDude.name() + " are best friends. They are "  + leftDude.age + " and " + rightDude.age + " respectively. " + leftDude.firstName + " has " + leftDude.eyeColor + " eyes, and " + rightDude.firstName + " has " + rightDude.eyeColor + " ones.";
+				leftDude.name() + " and " + rightDude.name() + " are best friends. They are "  + leftDude.age + " and " + rightDude.age + " respectively. " 
+				+ "<br>" + 
+				leftDude.firstName + " has " + leftDude.eyeColor + " eyes, and " + rightDude.firstName + " has " + rightDude.eyeColor + " ones.";
 		}
 		
 		// constructor function for people
@@ -192,7 +196,7 @@ function Person(first, last, age, eyecolor) {
 		}
 	</script>
 	
-	<pre id="mulOut">
+  <pre id="mulOut">
 Multiple Object Creation Output
 	</pre>
 	
