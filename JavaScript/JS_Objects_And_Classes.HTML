@@ -101,16 +101,31 @@ Object Creation Output
 	
 	  <pre>
 		<code>
-function newDemo() {
-	var person = {
-		firstName:String(document.getElementById("fName").value),
-		lastName:String(document.getElementById("lName").value),
-		age:parseInt(document.getElementById("age").value),
-		eyeColor:String(document.getElementById("eyeColor").value).toLowerCase(),
-		fullName : function() { return this.firstName + " " + this.lastName; }
-	}
-	document.getElementById("newOut").innerHTML =
-	person.fullName() + " is " + person.age + " years old, and has " + person.eyeColor + " eyes.";
+function mulSetup() {
+
+	var leftFName = String(document.getElementById("fName1").value);
+	var rightFName = String(document.getElementById("fName2").value);
+	var leftLName = String(document.getElementById("lName1").value);
+	var rightLName = String(document.getElementById("lName2").value);
+	var leftAge = parseInt(document.getElementById("age1").value);
+	var rightAge = parseInt(document.getElementById("age2").value);
+	var leftEyes = String(document.getElementById("eyeColor1").value).toLowerCase();
+	var rightEyes = String(document.getElementById("eyeColor2").value).toLowerCase();
+
+	var leftDude = new Person(leftFName, leftLName, leftAge, leftEyes);
+	var rightDude = new Person(rightFName, rightLName, rightAge, rightEyes);
+
+	document.getElementById("mulOut").innerHTML =
+		leftDude.name() + " and " + rightDude.name() + " are best friends. They are "  + leftDude.age + " and " + rightDude.age + " respectively. " + leftDude.firstName + " has " + leftDude.eyeColor + " eyes, and " + rightDude.firstName + " has " + rightDude.eyeColor + " ones.";
+}
+
+// constructor function for people
+function Person(first, last, age, eyecolor) {
+	this.firstName = first;
+	this.lastName = last;
+	this.age = age;
+	this.eyeColor = eyecolor;
+	this.name = function() {return this.firstName + " " + this.lastName;};
 }
 		</code>
 	</pre>
@@ -140,29 +155,45 @@ function newDemo() {
 			</tr>
 			<tr>
 			  <th scope="row">Eyeballs:</th>
-			  <td><input type="text" id="eyeColor1"><button type="button" onclick="mulDemo()">Submit</button></td>
-			  <td><input type="text" id="eyeColor2"><button type="button" onclick="mulDemo()">Submit</button></td>
+			  <td><input type="text" id="eyeColor1"></td>
+			  <td><input type="text" id="eyeColor2"></td>
 			</tr>
 		  </tbody>
 		</table>
+		<button type="button" onclick="mulSetup()">Submit</button>
 	</form>
 		
 	<script>
 		function mulSetup() {
-			var person = {
-				firstName:String(document.getElementById("fName").value),
-				lastName:String(document.getElementById("lName").value),
-				age:parseInt(document.getElementById("age").value),
-				eyeColor:String(document.getElementById("eyeColor").value).toLowerCase(),
-				fullName : function() { return this.firstName + " " + this.lastName; }
-			}
-			document.getElementById("newOut").innerHTML =
-			person.fullName() + " is " + person.age + " years old, and has " + person.eyeColor + " eyes.";
+			
+			var leftFName = String(document.getElementById("fName1").value);
+			var rightFName = String(document.getElementById("fName2").value);
+			var leftLName = String(document.getElementById("lName1").value);
+			var rightLName = String(document.getElementById("lName2").value);
+			var leftAge = parseInt(document.getElementById("age1").value);
+			var rightAge = parseInt(document.getElementById("age2").value);
+			var leftEyes = String(document.getElementById("eyeColor1").value).toLowerCase();
+			var rightEyes = String(document.getElementById("eyeColor2").value).toLowerCase();
+			
+			var leftDude = new Person(leftFName, leftLName, leftAge, leftEyes);
+			var rightDude = new Person(rightFName, rightLName, rightAge, rightEyes);
+			
+			document.getElementById("mulOut").innerHTML =
+				leftDude.name() + " and " + rightDude.name() + " are best friends. They are "  + leftDude.age + " and " + rightDude.age + " respectively. " + leftDude.firstName + " has " + leftDude.eyeColor + " eyes, and " + rightDude.firstName + " has " + rightDude.eyeColor + " ones.";
+		}
+		
+		// constructor function for people
+		function Person(first, last, age, eyecolor) {
+			this.firstName = first;
+			this.lastName = last;
+			this.age = age;
+			this.eyeColor = eyecolor;
+			this.name = function() {return this.firstName + " " + this.lastName;};
 		}
 	</script>
 	
 	<pre id="mulOut">
-Object Creation Output
+Multiple Object Creation Output
 	</pre>
 	
   <a href="#top">Back To Top</a>
