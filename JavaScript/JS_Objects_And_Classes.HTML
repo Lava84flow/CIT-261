@@ -54,18 +54,20 @@ function ###Demo() {
 <div>
 	<h3 id="creation">Object Creation</h3>
 	
-		<!-- Add the info for Variables here-->
+		<!-- Add the info for Object Creation here-->
 	
   <pre>
 		<code>
 function newDemo() {
-	var person = new Object();
-	person.firstName = String(document.getElementById("fName").value);
-	person.lastName = String(document.getElementById("lName").value);
-	person.age = parseInt(document.getElementById("age").value);
-	person.eyeColor = String(document.getElementById("eyeColor").value).toLowerCase(); 
+	var person = {
+		firstName:String(document.getElementById("fName").value),
+		lastName:String(document.getElementById("lName").value),
+		age:parseInt(document.getElementById("age").value),
+		eyeColor:String(document.getElementById("eyeColor").value).toLowerCase(),
+		fullName : function() { return this.firstName + " " + this.lastName; }
+	}
 	document.getElementById("newOut").innerHTML =
-	person.firstName + " " + person.lastName + " is " + person.age + " years old, and has " + person.eyeColor + " eyes.";
+	person.fullName() + " is " + person.age + " years old, and has " + person.eyeColor + " eyes.";
 }
 		</code>
 	</pre>
@@ -81,17 +83,85 @@ function newDemo() {
 	
 	<script>
 		function newDemo() {
-			var person = new Object();
-			person.firstName = String(document.getElementById("fName").value);
-			person.lastName = String(document.getElementById("lName").value);
-			person.age = parseInt(document.getElementById("age").value);
-			person.eyeColor = String(document.getElementById("eyeColor").value).toLowerCase(); 
+			var person = {
+				firstName:String(document.getElementById("fName").value),
+				lastName:String(document.getElementById("lName").value),
+				age:parseInt(document.getElementById("age").value),
+				eyeColor:String(document.getElementById("eyeColor").value).toLowerCase(),
+				fullName : function() { return this.firstName + " " + this.lastName; }
+			}
 			document.getElementById("newOut").innerHTML =
-			person.firstName + " " + person.lastName + " is " + person.age + " years old, and has " + person.eyeColor + " eyes.";
+			person.fullName() + " is " + person.age + " years old, and has " + person.eyeColor + " eyes.";
 		}
 	</script>
 
-  <pre id="newOut">
+  	<pre id="newOut">
+Object Creation Output
+	</pre>
+	
+	  <pre>
+		<code>
+function newDemo() {
+	var person = {
+		firstName:String(document.getElementById("fName").value),
+		lastName:String(document.getElementById("lName").value),
+		age:parseInt(document.getElementById("age").value),
+		eyeColor:String(document.getElementById("eyeColor").value).toLowerCase(),
+		fullName : function() { return this.firstName + " " + this.lastName; }
+	}
+	document.getElementById("newOut").innerHTML =
+	person.fullName() + " is " + person.age + " years old, and has " + person.eyeColor + " eyes.";
+}
+		</code>
+	</pre>
+	
+	<form>
+		<table width="200" border="2">
+		  <tbody>
+			<tr>
+			  <th width="30" scope="col">Make More People</th>
+			  <th width="30" scope="col">First Person:</th>
+			  <th width="30" scope="col">Second Person:</th>
+			</tr>
+			<tr>
+			  <th scope="row">First Name:</th>
+			  <td><input type="text" id="fName1"></td>
+			  <td><input type="text" id="fName2"></td>
+			</tr>
+			<tr>
+			  <th scope="row">Last Name:</th>
+			  <td><input type="text" id="lName1"></td>
+			  <td><input type="text" id="lName2"></td>
+			</tr>
+			<tr>
+			  <th scope="row">Age:</th>
+			  <td><input type="text" id="age1"></td>
+			  <td><input type="text" id="age2"></td>
+			</tr>
+			<tr>
+			  <th scope="row">Eyeballs:</th>
+			  <td><input type="text" id="eyeColor1"><button type="button" onclick="mulDemo()">Submit</button></td>
+			  <td><input type="text" id="eyeColor2"><button type="button" onclick="mulDemo()">Submit</button></td>
+			</tr>
+		  </tbody>
+		</table>
+	</form>
+		
+	<script>
+		function mulSetup() {
+			var person = {
+				firstName:String(document.getElementById("fName").value),
+				lastName:String(document.getElementById("lName").value),
+				age:parseInt(document.getElementById("age").value),
+				eyeColor:String(document.getElementById("eyeColor").value).toLowerCase(),
+				fullName : function() { return this.firstName + " " + this.lastName; }
+			}
+			document.getElementById("newOut").innerHTML =
+			person.fullName() + " is " + person.age + " years old, and has " + person.eyeColor + " eyes.";
+		}
+	</script>
+	
+	<pre id="mulOut">
 Object Creation Output
 	</pre>
 	
@@ -131,7 +201,7 @@ Object Creation Output
 	<div>
 	<h3 id="instantiation">Instantiation</h3>
 	
-		<!-- Add the info for VariaInstantiationbles here-->
+		<!-- Add the info for Instantiation here-->
 	
 	
 	
