@@ -42,14 +42,17 @@ function ###Demo() {
 	
 <h2>
 	<a href="#creation">Object Creation</a> --- 
-	<a href="#inheritance">Inheritance</a> <br>
-  	<a href="#variable">Properties</a> ---
-	<a href="#method">Methods</a> ---
+	<a href="#inheritance">Inheritance</a> ---<!--<br>-->
+  	<!--<a href="#variable">Properties</a> ---
+	<a href="#method">Methods</a> ----->
 	<a href="#instantiation">Instantiation</a> 
 
 </h2>
 	
 <br>
+	<p>
+		Turns out jsut about everyhting in JavaScript is a an object. everything but Boolean, Numbers and Strings must be an object, and these <em>can</em> be objects if you use the <b>new</b> keyword in their creation.
+	</p>
 	
 <div>
 	<h3 id="creation">Object Creation</h3>
@@ -84,10 +87,10 @@ function newDemo() {
 	<script>
 		function newDemo() {
 			var person = {
-				firstName:String(document.getElementById("fName").value),
-				lastName:String(document.getElementById("lName").value),
-				age:parseInt(document.getElementById("age").value),
-				eyeColor:String(document.getElementById("eyeColor").value).toLowerCase(),
+				firstName : String(document.getElementById("fName").value),
+				lastName : String(document.getElementById("lName").value),
+				age : parseInt(document.getElementById("age").value),
+				eyeColor : String(document.getElementById("eyeColor").value).toLowerCase(),
 				fullName : function() { return this.firstName + " " + this.lastName; }
 			}
 			document.getElementById("newOut").innerHTML =
@@ -99,8 +102,8 @@ function newDemo() {
 Object Creation Output
 	</pre>
 	
-	  <pre>
-	  	<code>
+  	<pre>
+		<code>
 function mulSetup() {
 
 	var leftFName = String(document.getElementById("fName1").value);
@@ -201,7 +204,7 @@ function Person(first, last, age, eyecolor) {
 	
   <pre id="mulOut">
 Multiple Object Creation Output
-	</pre>
+	</pre>	
 	
   <a href="#top">Back To Top</a>
 </div>
@@ -211,9 +214,40 @@ Multiple Object Creation Output
 	
 		<!-- Add the info for Inheritance here-->
 	
+	<pre>
+		<code>
+function ###Demo() {
+	var x = parseInt(document.getElementById("###Num1").value);
+	var ###out = x;
+	document.getElementById("###Out").innerHTML =
+	"####" + ###out;
+}
+		</code>
+	</pre>
 	
+	<form>
+		Make A Person<br>
+		First Name: <br> <input type="text" id="fNameI"><br>
+		Last Name: <br> <input type="text" id="lNameI"><br>
+		Age: <br> <input type="text" id="ageI"><br>
+		EyeBalls: <br> <input type="text" id="eyeColorI">
+		<button type="button" onclick="newDemo()">Submit</button>
+	</form>
 	
-	<a href="#top">Back To Top</a>
+	<script>
+		function ###Demo() {
+			var x = parseInt(document.getElementById("###Num1").value);
+			var out = x + y;
+			document.getElementById("###Out").innerHTML =
+			"####" + ###out;
+		}
+	</script>
+
+	<pre id="###Out">
+#### Output
+	</pre>
+	
+<!--	<a href="#top">Back To Top</a>
 </div>
 <br>
 <div>
@@ -223,7 +257,7 @@ Multiple Object Creation Output
 	
 	
 	
-	<a href="#top">Back To Top</a>
+<!--	<a href="#top">Back To Top</a>
 </div>
 <br>
 <div>
@@ -240,8 +274,12 @@ Multiple Object Creation Output
 	<h3 id="instantiation">Instantiation</h3>
 	
 		<!-- Add the info for Instantiation here-->
-	
-	
+		<!--Long Talky Time-->
+		<!--https://medium.com/dailyjs/instantiation-patterns-in-javascript-8fdcf69e8f9b-->
+		
+		<p>
+			
+		</p>	
 	
 	<a href="#top">Back To Top</a>
 </div>
