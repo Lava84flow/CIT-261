@@ -4,7 +4,8 @@ layout: default
 <!--<link href="../style.css" rel="stylesheet" type="text/css">-->
 <body>
 	<h1>JavaScript Objects And Classes</h1>
-	<h4><a href="https://lava84flow.github.io/CIT-261/">Back To Topics</a></h4>	
+	<h4><a href="https://lava84flow.github.io/CIT-261/">Back To Topics</a></h4>
+	<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/21Fvu3AYqFs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 	
 <!-- JavaScript Objects - Object Creation Functions, Inheritance, Properties, Methods, Instantiation -->
 	
@@ -217,18 +218,32 @@ Multiple Object Creation Output
 	
 		<!-- Add the info for Inheritance here-->
 	<p>
-		You can't really directly add properoties and methods to an object in JavaScript. <br>
+		You can't really directly add properties and methods to an object in JavaScript. <br>
 		You have to go up a level to the prototype of the object. <br>
 		Of which, all things in JavaScript Objects build from, from intingers to strings and everything inbetween.
 	</p>
 	
 	<pre>
 		<code>
-function ###Demo() {
-	var x = parseInt(document.getElementById("###Num1").value);
-	var ###out = x;
-	document.getElementById("###Out").innerHTML =
-	"####" + ###out;
+function iDemo() {			
+	var iFName = String(document.getElementById("fNameI").value);
+	var iLName = String(document.getElementById("lNameI").value);
+	var iAge = parseInt(document.getElementById("ageI").value);
+	var iEyes = String(document.getElementById("eyeColorI").value).toLowerCase();
+	var iJob = String(document.getElementById("job").value);
+	var iLikes = String(document.getElementById("likes").value);
+
+	var betterperson = new BetterPerson(iFName, iLName, iAge, iEyes, iJob, iLikes);
+
+	document.getElementById("iOut").innerHTML =
+		betterperson.name() + " is " + betterperson.age + " years old, and has " + betterperson.eyeColor + " eyes. <br>They work as a " + 
+		betterperson.job + ". They also like " + betterperson.like + " Movies/Games/Books.";
+}
+
+function BetterPerson(first, last, age, eyecolor, job, like) {
+	Person.call(this, first, last, age, eyecolor);
+	this.job = job;
+	this.like = like;
 }
 		</code>
 	</pre>
