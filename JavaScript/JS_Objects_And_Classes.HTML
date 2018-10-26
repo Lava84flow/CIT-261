@@ -1,3 +1,4 @@
+<html >
 ---
 layout: default
 ---
@@ -51,7 +52,9 @@ function ###Demo() {
 	
 <br>
 	<p>
-		Turns out jsut about everyhting in JavaScript is a an object. everything but Boolean, Numbers and Strings must be an object, and these <em>can</em> be objects if you use the <b>new</b> keyword in their creation.
+		Turns out jsut about everyhting in JavaScript is a an object. <br>
+		Everything but Boolean, Numbers and Strings must be an object, <br>
+		and these three <i>can</i> be objects if you use the <b>new</b> keyword in their creation.
 	</p>
 	
 <div>
@@ -130,7 +133,7 @@ function Person(first, last, age, eyecolor) {
 	this.lastName = last;
 	this.age = age;
 	this.eyeColor = eyecolor;
-	this.name = function() {return this.firstName + " " + this.lastName;};
+	this.name = function() {return this.firstName + " " + this.lastName};
 }
 		</code>
 	</pre>
@@ -187,19 +190,20 @@ function Person(first, last, age, eyecolor) {
 			var rightDude = new Person(rightFName, rightLName, rightAge, rightEyes);
 			
 			document.getElementById("mulOut").innerHTML =
-				leftDude.name() + " and " + rightDude.name() + " are best friends. They are "  + leftDude.age + " and " + rightDude.age + " respectively. " 
+				leftDude.name() + " and " + rightDude.firstName() + " are best friends. They are "  + leftDude.age + " and " + rightDude.age + " respectively. " 
 				+ "<br>" + 
 				leftDude.firstName + " has " + leftDude.eyeColor + " eyes, and " + rightDude.firstName + " has " + rightDude.eyeColor + " ones.";
 		}
 		
-		// constructor function for people
+		// constructor function for people		
 		function Person(first, last, age, eyecolor) {
 			this.firstName = first;
 			this.lastName = last;
 			this.age = age;
 			this.eyeColor = eyecolor;
-			this.name = function() {return this.firstName + " " + this.lastName;};
-		}
+			this.name = function() {return this.firstName + " " + this.lastName;}
+		}		
+		
 	</script>
 	
   <pre id="mulOut">
@@ -213,6 +217,11 @@ Multiple Object Creation Output
 	<h3 id="inheritance">Inheritance</h3>
 	
 		<!-- Add the info for Inheritance here-->
+	<p>
+		You can't really directly add properoties and methods to an object in JavaScript. <br>
+		You have to go up a level to the prototype of the object. <br>
+		Of which, all things in JavaScript Objects build from, from intingers to strings and everything inbetween.
+	</p>
 	
 	<pre>
 		<code>
@@ -226,25 +235,74 @@ function ###Demo() {
 	</pre>
 	
 	<form>
-		Make A Person<br>
+		Make A Better Person<br>
 		First Name: <br> <input type="text" id="fNameI"><br>
 		Last Name: <br> <input type="text" id="lNameI"><br>
 		Age: <br> <input type="text" id="ageI"><br>
-		EyeBalls: <br> <input type="text" id="eyeColorI">
-		<button type="button" onclick="newDemo()">Submit</button>
+		EyeBalls: <br> <input type="text" id="eyeColorI"><br>
+		Profession: <br> <input type="text" id="job"><br>
+		Genre <br> <input type="tex" id="likes"><br>
+		<button type="button" onclick="iDemo()">Submit</button>
 	</form>
 	
 	<script>
-		function ###Demo() {
-			var x = parseInt(document.getElementById("###Num1").value);
-			var out = x + y;
-			document.getElementById("###Out").innerHTML =
-			"####" + ###out;
-		}
-	</script>
+		function iDemo() {			
+			var iFName = String(document.getElementById("fNameI").value);
+			var iLName = String(document.getElementById("lNameI").value);
+			var iAge = parseInt(document.getElementById("ageI").value);
+			var iEyes = String(document.getElementById("eyeColorI").value).toLowerCase();
+			var iJob = String(document.getElementById("job").value);
+			var iLikes = String(document.getElementById("likes").value);
 
-	<pre id="###Out">
-#### Output
+			var betterperson = new BetterPerson(iFName, iLName, iAge, iEyes, iJob, iLikes);
+
+			document.getElementById("iOut").innerHTML =
+				betterperson.name() + " is " + betterperson.age + " years old, and has " + betterperson.eyeColor + " eyes. <br>They work as a " + 
+				betterperson.job + ". They also like " + betterperson.like + " Movies/Games/Books." + betterperson.test();
+		}
+
+		function BetterPerson(first, last, age, eyecolor, job, like) {
+			Person.call(this, first, last, age, eyecolor);
+			this.job = job;
+			this.like = like;
+			/*this.test = function () {return this.firstName + " " + this.like};*/
+		}
+		/*BetterPerson.prototype = Object.create(Person.prototype);
+		BetterPerson.prototype.constructor = BetterPerson;*/
+
+	</script>
+	<p>
+		While not exactly used here,if we wanted to add new funtions or variables directly to the Person class just for the BetterPerson, we would then want to backup to prototype add or adjust things. 
+	</p>
+	<pre>
+		<code>
+function animal(){
+    this.name = 'rover';
+    this.set_name = function(name){
+         this.name = name;
+    }
+}
+		</code>
+	</pre>
+	
+	<p> In this one, every time we have to call for a new animal which, in our example above isn't too big of deal (cause it just wipes the old one evertime you hit the button)<!-- As far as I can tell anyways-->, it has to build the function form scratch everytime, which can really chew into memory and speed. But it also does allow for private data access, which may or may not be what you need at the time.</p>
+	
+	<pre>
+		<code>
+function animal(){
+    this.name = 'rover';
+}
+animal.prototype.set_name = function(name){
+    this.name = name;
+}
+		</code>
+	</pre>
+	<p>
+		This only has to build the function once, and all other animals can refer to it when they need to. Which does the oppsite of eating all of ram you've ever had.
+	</p>
+
+	<pre id="iOut">
+Inheritance Output
 	</pre>
 	
 <!--	<a href="#top">Back To Top</a>
@@ -276,10 +334,108 @@ function ###Demo() {
 		<!-- Add the info for Instantiation here-->
 		<!--Long Talky Time-->
 		<!--https://medium.com/dailyjs/instantiation-patterns-in-javascript-8fdcf69e8f9b-->
-		
+		<p> 
+			Now, this one is going be a bit of a ramble. And I took most of this from <a href="https://medium.com/dailyjs/instantiation-patterns-in-javascript-8fdcf69e8f9b">Instantiation Patterns in JavaScript.</a>
+			<br>
+			Make that 95 percent of it. I couldn't figure out a better way to explain it. This one's a tad of a doozy.
+			<br>
+		    <br>
+		    Instantiation patterns are ways to create something in JavaScript. JavaScript provides four different methods to create objects.
+			<br>
+		    Regardless of which method used, every method will provide the following functionality: 
+			<br>
+			<br>
+			Create an object
+			<br>
+			Create methods and properties for that object
+			<br>
+			<br>
+			The four instantiation patterns in JavaScript: Functional, Functional-shared, Prototypal, and Pseudoclassical.
+	    </p>
+			<h3>Functional</h3>			
+			<br>
 		<p>
-			
-		</p>	
+		  	<img src="https://cdn-images-1.medium.com/max/800/1*SPZnQAWqfvZSCz4Y4rzyzg.png" alt="functional instantiation example">
+			<br>			
+			<br>			
+			With functional instantiation, we first create a function. Inside the function we create an empty object and add properties and methods to it. We then return this object.
+	  </p>
+		<p>
+			Every time the function is called we will have access to the methods that were created. 
+		</p>
+		<p>
+			Pros:<br>
+			For most people that are learning JavaScript this is the method that they learned for creating a new object. For anybody reading your code, it is easy to understand because all the functions are contained within the object. The properties are private since they are contained within the closure scope.
+		</p>
+		<p>
+			Cons:<br>
+			Since all the methods are contained within the function, if you create a second instance of that object, you will have duplicated all the properties and methods in memory. If you create a new object using this method, then change any of the methods and create a new instance, the two objects will be referencing different methods
+		</p>
+			<h3>Functional Shared</h3>			
+			<br>
+		<p>
+		  <img src="https://cdn-images-1.medium.com/max/800/1*H2EIw20YPMPz7weTmFcD9w.png" alt="Functional Shared Instantiation Example"><br>			
+			<br>
+			One of the downsides of functional instantiation is that you duplicate methods in memory every time you create a new object. Functional shared instantiation attempts to overcome that limitation by making the methods shared among all objects.
+		</p>
+		<p>
+			Just like functional instantiation, we start with a function with an empty object inside and define properties within the function. Methods are defined in another object. We then extend our object with these methods. In the end, we return the object. Every object created by functional shared instantiation will have a pointer to the same methods without duplication.
+		</p>
+		<p>
+			Pros:<br>
+			Removes the duplication of methods that was found in functional instantiation which improves memory management.
+		</p>
+		<p>
+			Cons:<br>
+			The pointers to the shared methods are created when the object is instantiated. If you modify the methods and then create new objects, they original object and the new object will refer to different methods.
+		</p>
+			<h3>Prototypal</h3>			
+			<br>
+		<p>
+			<img src="https://cdn-images-1.medium.com/max/800/1*hyJgQk5ausq5kkQr4Ty_Ew.png" alt="Prototypal Instantiation Example">
+			<br>			
+			<br>
+			Prototypal instantiation utilizes the prototype chain to create objects. Methods are attached to the object’s prototype using the Object.create method.
+	  </p>
+		<p>
+			To start you will create all the methods on a separate object. Then you create a function. Inside the function you use the Object.create method to attach the methods. You will also define any properties inside the function. Then you return the object.
+		</p>
+		<p>
+			Pros:<br>
+			Methods are attached to the object’s prototype instead of being returned within the object. Every method is available to every object created without duplicating methods in memory.
+		</p>
+	  <p>
+			Cons:<br>
+			To use this method, you have to create an object, decorate it and then return it from the constructor function.
+		</p>
+			<h3>Pseudoclassical</h3>			
+			<br>
+		<p>
+			<img src="https://cdn-images-1.medium.com/max/800/1*65-jFc67sI1B5zRm_91vyQ.png" alt="Pseudoclassical Instantiation Example"><br>			
+			<br>
+			Pseudoclassical instantiation attempts to overcome the amount of typing required to create an object using prototypal instantiation. Like prototypal, Pseudoclassical instantiation uses the prototype chain.</p>
+	  <p>
+ 		 	JavaScript provides most of the functionality that create with prototypal instantiation with the use of the keyword new. Pseudoclassical instantiation utilizes this when creating a new object. 
+		</p>
+		<p>
+			Instead of creating a new variable and assigning Object.create() to it, Pseudoclassical instantiation assigns it to “this”.<br>
+			To start you create a new function and create properties using the “this” keyword. Methods are assigned to the prototype. To create a new object, you use the keyword “new”.
+		</p>
+		<p> Pros:<br>
+			By utilizing functionality built into JavaScript, Pseudoclassical instantiation is the most optimized method of object creation.<br>
+		</p>
+		<p>
+			Cons:<br>
+			It is a little more complex in its design when compared to the other three methods.<br>
+		</p>
+
+
+
+
+
+
+
+
 	
 	<a href="#top">Back To Top</a>
 </div>
@@ -287,3 +443,4 @@ function ###Demo() {
 	
 	
 </body>
+	</html>
