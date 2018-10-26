@@ -1,9 +1,11 @@
 # CIT-261
 
 [JavaScript - Conditional Statements, Functions, Variables, Parameters, Loops, Arrays, Associative Arrays](https://lava84flow.github.io/CIT-261/JavaScript/JS_Functions_And_Variables.HTML)
+https://www.youtube.com/watch?v=GZgAQ6ca3CQ
 
 
 [JavaScript Objects - Object Creation Functions, Inheritance, Properties, Methods, Instantiation](https://lava84flow.github.io/CIT-261/JavaScript/JS_Objects_And_Classes.HTML)
+https://www.youtube.com/watch?v=21Fvu3AYqFs
 
 
 [JSON Parse, Stringify](https://lava84flow.github.io/CIT-261//JSON/JSON_Parse_Stringify.HTML)
