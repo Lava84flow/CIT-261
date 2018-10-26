@@ -51,7 +51,7 @@ function ###Demo() {
 	
 <br>
 	<p>
-		Turns out jsut about everyhting in JavaScript is a an object. <br>
+		Turns out just about everything in JavaScript is a an object. <br>
 		Everything but Boolean, Numbers and Strings must be an object, <br>
 		and these three <i>can</i> be objects if you use the <b>new</b> keyword in their creation.
 	</p>
@@ -189,7 +189,7 @@ function Person(first, last, age, eyecolor) {
 			var rightDude = new Person(rightFName, rightLName, rightAge, rightEyes);
 			
 			document.getElementById("mulOut").innerHTML =
-				leftDude.name() + " and " + rightDude.firstName() + " are best friends. They are "  + leftDude.age + " and " + rightDude.age + " respectively. " 
+				leftDude.name() + " and " + rightDude.name() + " are best friends. They are "  + leftDude.age + " and " + rightDude.age + " respectively. " 
 				+ "<br>" + 
 				leftDude.firstName + " has " + leftDude.eyeColor + " eyes, and " + rightDude.firstName + " has " + rightDude.eyeColor + " ones.";
 		}
@@ -257,7 +257,7 @@ function ###Demo() {
 
 			document.getElementById("iOut").innerHTML =
 				betterperson.name() + " is " + betterperson.age + " years old, and has " + betterperson.eyeColor + " eyes. <br>They work as a " + 
-				betterperson.job + ". They also like " + betterperson.like + " Movies/Games/Books." + betterperson.test();
+				betterperson.job + ". They also like " + betterperson.like + " Movies/Games/Books.";
 		}
 
 		function BetterPerson(first, last, age, eyecolor, job, like) {
@@ -270,6 +270,11 @@ function ###Demo() {
 		BetterPerson.prototype.constructor = BetterPerson;*/
 
 	</script>
+	
+	<pre id="iOut">
+Inheritance Output
+	</pre>
+	
 	<p>
 		While not exactly used here,if we wanted to add new funtions or variables directly to the Person class just for the BetterPerson, we would then want to backup to prototype add or adjust things. 
 	</p>
@@ -300,9 +305,7 @@ animal.prototype.set_name = function(name){
 		This only has to build the function once, and all other animals can refer to it when they need to. Which does the oppsite of eating all of ram you've ever had.
 	</p>
 
-	<pre id="iOut">
-Inheritance Output
-	</pre>
+
 	
 <!--	<a href="#top">Back To Top</a>
 </div>
