@@ -21,9 +21,6 @@
 [Manipulating CSS Class Properties Using JavaScript](https://lava84flow.github.io/CIT-261/CSS/Manipulate_CSS_Using_JS.HTML)
 
 
-[Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript](https://lava84flow.github.io/CIT-261/CSS/CSS3_Transition_And_Animation_JS.HTML)
-
-
 [Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events](https://lava84flow.github.io/CIT-261/JavaScript/JS_Mobile_Events.HTML)
 
 
