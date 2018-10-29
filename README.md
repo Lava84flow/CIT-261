@@ -30,10 +30,4 @@
 [HTML5 Tags - Video, Audio, and Canvas](https://lava84flow.github.io/CIT-261//HTML/HMTL5-Tags.HTML)
 
 
-[Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries](https://lava84flow.github.io/CIT-261/CSS/CSS3-Transitions.HTML)
-
-
-[Designing, Defining, and Triggering CSS3 Transforms without Custom Libraries](https://lava84flow.github.io/CIT-261/CSS/CSS3-Transforms.HTML)
-
-
 [Designing, Defining, and Triggering CSS3 Animations without Custom Libraries](https://lava84flow.github.io/CIT-261/CSS/CSS3-Animations.HTML)
