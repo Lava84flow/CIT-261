@@ -62,17 +62,41 @@ function ###Demo() {
 		<!-- Add the info for Transitions here-->
 	 <pre>
 		<code>
-Blargh	
+#changeOut {
+	background: darkred;
+	width: 250px;
+	height: 75px;
+	font-size: 20;
+	transition: width 5s, height 5s, line-height 5s, font-size 5s, background 1s;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 75px;
+}
+#changeOut:hover{
+	width: 500px;
+	height: 250px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 250px;
+	font-size: 50;
+}
+#changeOut:active {
+	background: green;
+	width: 500px;
+	height: 250px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 250px;
+	font-size: 50;
+}	
 		</code>
 	</pre>
 	
-  	<form>
-		Stick some numbers here:<br>
-		Blargh
-		<button type="button" onclick="changeDemo()">Submit</button>
-	</form>
+
+	Touch it, I dare you.
+
 	
-  <script>
+  	<script>
 		function changeDemo() {
 			Blargh
 		}
@@ -80,7 +104,7 @@ Blargh
 
 	<br>
   	<div id="changeOut">
-		Transitions Output
+		Touch Me
 	</div>
 	
 	<a href="#top">Back To Top</a>
@@ -98,11 +122,7 @@ Blargh
 		</code>
 	</pre>
 	
-  	<form>
-		Stick some numbers here:<br>
 		Blargh
-		<button type="button" onclick="moveDemo()">Submit</button>
-	</form>
 	
   <script>
 		function moveDemo() {
@@ -112,7 +132,7 @@ Blargh
 
 	<br>
   	<div id="moveOut">
-		Transforms Output
+		Also Touch Me
 	</div>
 	
 	<a href="#top">Back To Top</a>

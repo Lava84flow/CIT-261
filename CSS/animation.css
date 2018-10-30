@@ -1,6 +1,29 @@
 @charset "utf-8";
 
-/*body {
-	background: red;
-	
-}*/
+#changeOut {
+	background: darkred;
+	width: 250px;
+	height: 75px;
+	font-size: 20;
+	transition: width 5s, height 5s, line-height 5s, font-size 5s, background 2s;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 75px;
+}
+#changeOut:hover{
+	width: 500px;
+	height: 250px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 250px;
+	font-size: 50;
+}
+#changeOut:active {
+	background: green;
+	width: 500px;
+	height: 250px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 250px;
+	font-size: 50;
+}
