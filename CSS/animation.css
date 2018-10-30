@@ -5,7 +5,7 @@
 	width: 250px;
 	height: 75px;
 	font-size: 20;
-	transition: width 5s, height 5s, line-height 5s, font-size 5s, background 2s;
+	transition: width 5s, height 5s, line-height 5s, font-size 5s, background 1s;
 	text-align: center;
 	vertical-align: middle;
 	line-height: 75px;
