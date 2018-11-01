@@ -1,11 +1,13 @@
 ---
 layout: default
 ---
+<link href="../style.css" rel="stylesheet" type="text/css">
+<link href="events.css" rel="stylesheet" type="text/css">
 <body>
-	<h1>JavaScript Standard Events</h1>
-	<h4><a href="https://lava84flow.github.io/CIT-261/">Back To Topics</a></h4>
+	<h1 onmouseover="rainbowStart(this)" onmouseout="rainbowEnd(this)">JavaScript Standard Events</h1>
+	<h4 onmouseover="rainbowStart(this)" onmouseout="rainbowEnd(this)"><a href="https://lava84flow.github.io/CIT-261/">Back To Topics</a></h4>
 	<!-- walkthrough video here -->
-	<iframe></iframe>
+	<iframe onmouseover="rainbowStart(this)" onmouseout="rainbowEnd(this)"></iframe>
 	
 	<br>
 	
@@ -40,36 +42,44 @@ function ###Demo() {
 #### Output
 	</pre>
 -->
-	
-<h2>
-	<a href="#conditional">Conditional Statements</a> --- 
-	<a href="#function">Functions</a> --- 
-	<a href="#variable">Variables</a><br>
-	<a href="#parameter">Parameters</a> ---
-	<a href="#loop">Loops</a> ---  
-	<a href="#array">Arrays</a> --- 
-	<a href="#associative">Associative Arrays</a>
-</h2>
-	
+
 <br>
 
 <div>
-	<h3 id="variable">Variables</h3>
+<h3 id="event" onmouseover="rainbowStart(this)" onmouseout="rainbowEnd(this)">Events</h3>
 	
 		<!-- Add the info for Variables here-->
-  <pre>
-		<code>
-function varDemo() {
-	var x = parseInt(document.getElementById("varNum1").value);
-	var y = parseInt(document.getElementById("varNum2").value);
-	var total = x + y;
-	document.getElementById("varOut").innerHTML =
-	"The total is: " + total;
-}		
-		</code>
-	</pre>
+	<pre><code onMouseOver="rainbowStart(this)" onMouseOut="rainbowEnd(this)" ontouchstart="rainbowStart(this)" ontouchend="rainbowEnd(this)">
+
+&lt;tag onmouseover="rainbowStart(this)" onmouseout="rainbowEnd(this) 
+ontouchstart="rainbowStart(this)" ontouchend="rainbowEnd(this)"&gt;		
+
+@keyframes rainbow {
+0% {background: #ff0000;}
+10% {background: #ff8000;}
+20% {background: #ffff00;}
+30% {background: #80ff00;}
+40% {background: #00ff00;}
+50% {background: #00ff80;}
+60% {background: #00ffff;}
+70% {background: #0080ff;}
+80% {background: #0000ff;}
+90% {background: #8000ff;}
+100% {background: #ff0080;}
+}
+
+function rainbowStart(x) {
+	x.style.animation = "rainbow 2s 1";
+	x.style.animationIterationCount = "infinite";
+}
+
+function rainbowEnd(x) {
+	x.style.animation = null;
+	x.style.animationIterationCount = null;
+}
+</code></pre>
 	
-  <form>
+  <form onmouseover="rainbowStart(this)" onmouseout="rainbowEnd(this)" ontouchstart="rainbowStart(this)" ontouchend="rainbowEnd(this)">
 		Stick some numbers here:<br>
 		<input type="text" id="varNum1"><br>
 		<input type="text" id="varNum2">
@@ -77,20 +87,25 @@ function varDemo() {
   </form>
 	
 	<script>
-		function varDemo() {
-			var x = parseInt(document.getElementById("varNum1").value);
-			var y = parseInt(document.getElementById("varNum2").value);
-			var total = x + y;
-			document.getElementById("varOut").innerHTML =
-			"The total is: " + total;
+		
+		//var x = document.getElementsByClassName("test");
+		// ask how to get this to work by classes and not jsut id's 
+		function rainbowStart(x) {
+			x.style.animation = "rainbow 2s 1";
+			x.style.animationIterationCount = "infinite";
+		}
+		
+		function rainbowEnd(x) {
+			x.style.animation = null;
+			x.style.animationIterationCount = null;
 		}
 	</script>
 
-  <pre id="varOut">
+  <pre id="varOut" onmouseover="rainbowStart(this)" onmouseout="rainbowEnd(this)" ontouchstart="rainbowStart(this)" ontouchend="rainbowEnd(this)">
 Variables Output
 	</pre>
 	
-	<a href="#top">Back To Top</a>
+	<a href="#top" onmouseover="rainbowStart(this)" onmouseout="rainbowEnd(this)" ontouchstart="rainbowStart(this)" ontouchend="rainbowEnd(this)">Back To Top</a>
 </div>
 <br>
 	
