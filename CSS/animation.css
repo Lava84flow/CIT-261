@@ -65,8 +65,7 @@
 	animation:animeOut 4s ease;
 }
 
-@keyframes animeOut
-{
+@keyframes animeOut {
 	0% {}
 	5% {left:8px; top: -2px; transform: rotate(-2deg);}
 	10% {left:12px; top: 2px; transform: rotate(2deg);}
@@ -88,4 +87,9 @@
 	90% {left:12px; top: 2px; transform: rotate(2deg);}
 	95% {left:8px; top: -2px; transform: rotate(-2deg);}
 	100% {}
+}
+
+@keyframes spin {
+	0% {}
+	100% {transform: rotate(360deg);}
 }

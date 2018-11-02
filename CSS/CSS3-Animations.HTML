@@ -3,6 +3,7 @@ layout: default
 ---
 <!--<link href="../style.css" rel="stylesheet" type="text/css">-->
 <link href="animation.css" rel="stylesheet" type="text/css">
+<link href="../JavaScript/events.css" rel="stylesheet" type="text/css">
 <body>	
 	<!-- Combines: Designing, Defining, and Triggering CSS3 Animations without Custom Libraries,Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries, Designing, Defining, and Triggering CSS3 Transforms without Custom Libraries, and Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript-->
 	<!-- CSS Animations - Transitions, Transforms, Animations, JavaScript Triggers -->
@@ -231,27 +232,60 @@ function ###Demo() {
 	
 		<!-- Add the info for JavaScript Triggers here-->
 	 <pre>
-		<code>
-Blargh	
+	 	<code>		
+&lt;form&gt;
+	Push the Button
+	&lt;button type="button" id="sitOnIt" onmouseover="spin(this)" onmouseout="resetAnime(this)" onclick="triggerDemo()"&gt;Push Me&lt;/button&gt;
+&lt;/form&gt;
+		
+function spin(x) {
+	x.style.animation = "spin 0.75s ease-in-out";
+	x.style.animationIterationCount = "4";
+}
+function resetAnime(x) {
+	x.style.removeProperty('animation');
+	x.style.removeProperty('animationIterationCount');
+}
+function triggerDemo() {
+	x = document.getElementById('triggerOut')
+	x.style.animation = "rainbow 2s linear";
+	x.style.animationIterationCount = "2";
+	x.addEventListener("animationend", function() { resetAnime(x); });
+}
+
+@keyframes spin {
+	0% {}
+	100% {transform: rotate(360deg);}
+}	
 		</code>
 	</pre>
 	
   	<form>
-		Stick some numbers here:<br>
-		Blargh
-		<button type="button" onclick="triggerDemo()">Submit</button>
+		Push the Button
+	  	<button type="button" onmouseover="spin(this)" onmouseout="resetAnime(this)" onclick="triggerDemo()">Push Me</button>
 	</form>
 	
-  <script>
+	<script>
+		function spin(x) {
+			x.style.animation = "spin 0.75s ease-in-out";
+			x.style.animationIterationCount = "4";
+		}
+		function resetAnime(x) {
+			x.style.removeProperty('animation');
+			x.style.removeProperty('animationIterationCount');
+		}
 		function triggerDemo() {
-			Blargh
+			x = document.getElementById('triggerOut')
+			x.style.animation = "rainbow 2s linear";
+			x.style.animationIterationCount = "2";
+			x.addEventListener("animationend", function() { resetAnime(x); });
 		}
 	</script>
 
 	<br>
-  	<div id="triggerOut">
-		JavaScript Triggers Output
-	</div>
+  	<pre id="triggerOut">
+		Prepare For Seizures
+	</pre>
 	
 	<a href="#top">Back To Top</a>
 </div>	

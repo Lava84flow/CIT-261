@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<link href="../style.css" rel="stylesheet" type="text/css">
+<!--<link href="../style.css" rel="stylesheet" type="text/css">-->
 <link href="events.css" rel="stylesheet" type="text/css">
 <body>
 	<h1 onmouseover="rainbowStart(this)" onmouseout="rainbowEnd(this)">JavaScript Standard Events</h1>
@@ -52,7 +52,7 @@ function ###Demo() {
 	<pre><code onMouseOver="rainbowStart(this)" onMouseOut="rainbowEnd(this)" ontouchstart="rainbowStart(this)" ontouchend="rainbowEnd(this)">
 
 &lt;tag onmouseover="rainbowStart(this)" onmouseout="rainbowEnd(this) 
-ontouchstart="rainbowStart(this)" ontouchend="rainbowEnd(this)"&gt;		
+ontouchstart="rainbowStart(this)" ontouchend="rainbowEnd(this)"&gt;
 
 @keyframes rainbow {
 0% {background: #ff0000;}
@@ -91,13 +91,20 @@ function rainbowEnd(x) {
 		//var x = document.getElementsByClassName("test");
 		// ask how to get this to work by classes and not jsut id's 
 		function rainbowStart(x) {
-			x.style.animation = "rainbow 2s 1";
+			x.style.animation = "rainbow 2s linear";
 			x.style.animationIterationCount = "infinite";
 		}
-		
+		// this works but it's not really the right way to go about it most of time. as with everyhting however, it does have it's uses
+		/*
 		function rainbowEnd(x) {
 			x.style.animation = null;
 			x.style.animationIterationCount = null;
+		}
+		*/
+		// this is how you acatully want to get this done 90% of the time.
+		function rainbowEnd(x) {
+			x.style.removeProperty('animation');
+			x.style.removeProperty('animationIterationCount');
 		}
 	</script>
 
