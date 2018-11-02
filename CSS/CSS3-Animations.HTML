@@ -235,7 +235,10 @@ function ###Demo() {
 	 	<code>		
 &lt;form&gt;
 	Push the Button
-	&lt;button type="button" id="sitOnIt" onmouseover="spin(this)" onmouseout="resetAnime(this)" onclick="triggerDemo()"&gt;Push Me&lt;/button&gt;
+	&lt;button type="button" onmouseover="spin(this)" 
+	onmouseout="resetAnime(this)" onclick="triggerDemo()"&gt;
+		Push Me
+	&lt;/button&gt;
 &lt;/form&gt;
 		
 function spin(x) {
@@ -277,14 +280,14 @@ function triggerDemo() {
 		function triggerDemo() {
 			x = document.getElementById('triggerOut')
 			x.style.animation = "rainbow 2s linear";
-			x.style.animationIterationCount = "2";
+			x.style.animationIterationCount = "4";
 			x.addEventListener("animationend", function() { resetAnime(x); });
 		}
 	</script>
 
 	<br>
   	<pre id="triggerOut">
-		Prepare For Seizures
+Prepare For Seizures
 	</pre>
 	
 	<a href="#top">Back To Top</a>
