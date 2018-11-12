@@ -4,10 +4,11 @@ layout: default
 <!--<link href="../style.css" rel="stylesheet" type="text/css">-->
 <link href="events.css" rel="stylesheet" type="text/css">
 <body>
-	<h1 onmouseover="rainbowStart(this)" onmouseout="rainbowEnd(this)">JavaScript Standard Events</h1>
-	<h4 onmouseover="rainbowStart(this)" onmouseout="rainbowEnd(this)"><a href="https://lava84flow.github.io/CIT-261/">Back To Topics</a></h4>
+	<h1>JavaScript Standard Events</h1>
+	<h4><a href="https://lava84flow.github.io/CIT-261/">Back To Topics</a></h4>
 	<!-- walkthrough video here -->
-	<iframe onmouseover="rainbowStart(this)" onmouseout="rainbowEnd(this)"></iframe>
+    <p>Recording software is on the fritz right now so I'll add the video later.</p>
+	<iframe></iframe>
 	
 	<br>
 	
@@ -46,44 +47,67 @@ function ###Demo() {
 <br>
 
 <div>
-<h3 id="event" onmouseover="rainbowStart(this)" onmouseout="rainbowEnd(this)">Events</h3>
+<h3>Events</h3>
 	
-		<!-- Add the info for Variables here-->
-	<pre><code onMouseOver="rainbowStart(this)" onMouseOut="rainbowEnd(this)" ontouchstart="rainbowStart(this)" ontouchend="rainbowEnd(this)">
-
-&lt;tag onmouseover="rainbowStart(this)" onmouseout="rainbowEnd(this) 
-ontouchstart="rainbowStart(this)" ontouchend="rainbowEnd(this)"&gt;
-
-@keyframes rainbow {
-0% {background: #ff0000;}
-10% {background: #ff8000;}
-20% {background: #ffff00;}
-30% {background: #80ff00;}
-40% {background: #00ff00;}
-50% {background: #00ff80;}
-60% {background: #00ffff;}
-70% {background: #0080ff;}
-80% {background: #0000ff;}
-90% {background: #8000ff;}
-100% {background: #ff0080;}
+		<!-- Add the info for Events here-->
+	<pre>
+<code id="codeChunk">    
+function rainbowStart(x) {
+    x.style.animation = "rainbow 2s linear";
+    x.style.animationIterationCount = "infinite";           
 }
 
-function rainbowStart(x) {
-	x.style.animation = "rainbow 2s 1";
-	x.style.animationIterationCount = "infinite";
+async function clickStart(x) {
+    var ding = new sound("415510__inspectorj__bell-counter-a_MP3 128 kbps.mp3");
+    //ding.volume = 0.25;
+    x.style.animation = "redgreen 8s";
+    x.style.animationIterationCount = "1";
+    await sleep(8000);
+    //Math.floor(Math.random() * (max - min + 1) ) + min;
+    rainbowEnd(x);
+    ding.play();
+    document.getElementById("varOut").innerHTML = "Ding! Your Ticket number is " +
+    (Math.floor(Math.random() * (999 - 100 + 1) ) + 100) + "-" + 
+    (Math.floor(Math.random() * (999 - 100 + 1) ) + 100) + "-" + 
+    (Math.floor(Math.random() * (999 - 100 + 1) ) + 100);
+}
+
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }
+} 
+
+function sleep(ms) {
+    return new Promise(resolve =&gt; setTimeout(resolve, ms));
 }
 
 function rainbowEnd(x) {
-	x.style.animation = null;
-	x.style.animationIterationCount = null;
+    x.style.removeProperty('animation');
+    x.style.removeProperty('animationIterationCount');
 }
-</code></pre>
+</code>
+    </pre>
 	
-  <form onmouseover="rainbowStart(this)" onmouseout="rainbowEnd(this)" ontouchstart="rainbowStart(this)" ontouchend="rainbowEnd(this)">
-		Stick some numbers here:<br>
-		<input type="text" id="varNum1"><br>
-		<input type="text" id="varNum2">
-		<button type="button" onclick="varDemo()">Submit</button>
+  <form ontouchstart="rainbowStart(codeChunk)" ontouchend="rainbowEnd(codeChunk)">
+		Click the button an wait a sec:<br>
+		
+    <button type="button" 
+                onclick="clickStart(this)" 
+                onmouseover="rainbowStart(codeChunk)" 
+                onmouseout="rainbowEnd(codeChunk)"
+                style="height: 75px; width: 150px;">
+            Submit
+        </button>
   </form>
 	
 	<script>
@@ -91,8 +115,21 @@ function rainbowEnd(x) {
 		//var x = document.getElementsByClassName("test");
 		// ask how to get this to work by classes and not jsut id's 
 		function rainbowStart(x) {
-			x.style.animation = "rainbow 2s linear";
-			x.style.animationIterationCount = "infinite";
+			x.style.animation = "rainbow 4s linear";
+			x.style.animationIterationCount = "infinite";           
+		}
+        
+        async function clickStart(x) {
+            var ding = new sound("415510__inspectorj__bell-counter-a_MP3 128 kbps.mp3");
+            // volume doesn't seem to be working for some reason
+            //ding.volume = 0.25;
+            x.style.animation = "redgreen 8s";
+            x.style.animationIterationCount = "1";
+            await sleep(8000);
+            //Math.floor(Math.random() * (max - min + 1) ) + min;
+            rainbowEnd(x);
+            ding.play();
+            document.getElementById("varOut").innerHTML = "Ding! Your Ticket number is " + (Math.floor(Math.random() * (999 - 100 + 1) ) + 100) + "-" + (Math.floor(Math.random() * (999 - 100 + 1) ) + 100) + "-" + (Math.floor(Math.random() * (999 - 100 + 1) ) + 100);            
 		}
 		// this works but it's not really the right way to go about it most of time. as with everyhting however, it does have it's uses
 		/*
@@ -101,18 +138,36 @@ function rainbowEnd(x) {
 			x.style.animationIterationCount = null;
 		}
 		*/
-		// this is how you acatully want to get this done 90% of the time.
+		function sound(src) {
+            this.sound = document.createElement("audio");
+            this.sound.src = src;
+            this.sound.setAttribute("preload", "auto");
+            this.sound.setAttribute("controls", "none");
+            this.sound.style.display = "none";
+            document.body.appendChild(this.sound);
+            this.play = function(){
+                this.sound.play();
+            }
+            this.stop = function(){
+                this.sound.pause();
+            }
+        } 
+        
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        // this is how you acatully want to get CSS tags removed 90% of the time.
 		function rainbowEnd(x) {
 			x.style.removeProperty('animation');
 			x.style.removeProperty('animationIterationCount');
 		}
 	</script>
 
-  <pre id="varOut" onmouseover="rainbowStart(this)" onmouseout="rainbowEnd(this)" ontouchstart="rainbowStart(this)" ontouchend="rainbowEnd(this)">
-Variables Output
+  <pre id="varOut">
+Event Output
 	</pre>
 	
-	<a href="#top" onmouseover="rainbowStart(this)" onmouseout="rainbowEnd(this)" ontouchstart="rainbowStart(this)" ontouchend="rainbowEnd(this)">Back To Top</a>
+	<a href="#top">Back To Top</a>
 </div>
 <br>
 	

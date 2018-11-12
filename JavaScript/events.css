@@ -13,3 +13,8 @@
 90% {background: #8000ff;}
 100% {background: #ff0080;}
 }
+
+@keyframes redgreen{
+    0% {background: red;}
+    100%{background: green;}
+}
