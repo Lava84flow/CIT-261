@@ -83,7 +83,7 @@ function newDemo() {
 		First Name: <br> <input type="text" id="fName"><br>
 		Last Name: <br> <input type="text" id="lName"><br>
 		Age: <br> <input type="text" id="age"><br>
-		EyeBalls: <br> <input type="text" id="eyeColor">
+		Eyeballs: <br> <input type="text" id="eyeColor">
 	  <button type="button" onclick="newDemo()">Submit</button>
 	</form>
 	
@@ -220,7 +220,7 @@ Multiple Object Creation Output
 	<p>
 		You can't really directly add properties and methods to an object in JavaScript. <br>
 		You have to go up a level to the prototype of the object. <br>
-		Of which, all things in JavaScript Objects build from, from intingers to strings and everything inbetween.
+		Of which, all things in JavaScript Objects build from, from integers to strings and everything in between.
 	</p>
 	
 	<pre>
@@ -253,7 +253,7 @@ function BetterPerson(first, last, age, eyecolor, job, like) {
 		First Name: <br> <input type="text" id="fNameI"><br>
 		Last Name: <br> <input type="text" id="lNameI"><br>
 		Age: <br> <input type="text" id="ageI"><br>
-		EyeBalls: <br> <input type="text" id="eyeColorI"><br>
+		Eyeballs: <br> <input type="text" id="eyeColorI"><br>
 		Profession: <br> <input type="text" id="job"><br>
 		Genre <br> <input type="tex" id="likes">
 		<button type="button" onclick="iDemo()">Submit</button>
@@ -291,7 +291,7 @@ Inheritance Output
 	</pre>
 	
 	<p>
-		While not exactly used here,if we wanted to add new funtions or variables directly to the Person class just for the BetterPerson, we would then want to backup to prototype add or adjust things. 
+		While not exactly used here,if we wanted to add new functions or variables directly to the Person class just for the BetterPerson, we would then want to backup to prototype add or adjust things. 
 	</p>
 	<pre>
 		<code>
@@ -304,7 +304,7 @@ function animal(){
 		</code>
 	</pre>
 	
-	<p> In this one, every time we have to call for a new animal which, in our example above isn't too big of deal (cause it just wipes the old one evertime you hit the button)<!-- As far as I can tell anyways-->, it has to build the function form scratch everytime, which can really chew into memory and speed. But it also does allow for private data access, which may or may not be what you need at the time.</p>
+	<p> In this one, every time we have to call for a new animal which, in our example above isn't too big of deal (cause it just wipes the old one every time you hit the button)<!-- As far as I can tell anyways-->, it has to build the function form scratch every time, which can really chew into memory and speed. But it also does allow for private data access, which may or may not be what you need at the time.</p>
 	
 	<pre>
 		<code>
@@ -317,7 +317,7 @@ animal.prototype.set_name = function(name){
 		</code>
 	</pre>
 	<p>
-		This only has to build the function once, and all other animals can refer to it when they need to. Which does the oppsite of eating all of ram you've ever had.
+		This only has to build the function once, and all other animals can refer to it when they need to. Which does the opposite of eating all of ram you've ever had.
 	</p>
 
 
