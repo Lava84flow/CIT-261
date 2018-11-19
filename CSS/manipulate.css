@@ -1,0 +1,26 @@
+@charset "utf-8";
+#mememan {
+    margin-right: auto;
+    margin-left: auto;
+}
+#pain {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    display: block;
+    height: 100px;
+    font-weight: bold;
+}
+#stupidDemo form {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    text-align: center;
+}
+img {
+  display: block;
+  height: auto;
+}
+.redborder {
+    border: dashed red 10px;
+}

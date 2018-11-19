@@ -1,7 +1,8 @@
 ---
 layout: default
 ---
-<!--<link href="../style.css" rel="stylesheet" type="text/css">-->
+<link href="../style.css" rel="stylesheet" type="text/css">
+<link href="manipulate.css" rel="stylesheet" type="text/css">
 <body>
 	
 	<h1>Manipulating CSS3 Classes with JavaScript</h1>
@@ -9,9 +10,9 @@ layout: default
 	
 	<h2>
 		<a href="#demo">Demonstrations</a> ---
-		<a href="#validation">Validations</a> <!-- --- 
-		<a href="#other">Other Uses</a> --- 
-		<a href="#stupid">Stupid Ideas</a><br> -->
+		<!--<a href="#validation">Validations</a>--> <!-- --- 
+		<a href="#other">Other Uses</a> --- -->
+		<a href="#stupid">Stupid Ideas</a><br>
 	</h2>
 
 <br>
@@ -54,12 +55,10 @@ function valDemo() {
 	</pre>
 	
   	<form>
-		Poke Them<br>
-		<input type="text" id="valBox">
-		<button type="button" onclick="fugDemo()">Fugly-ify</button>
-		<button type="button" onclick="purpDemo()">Purple</button>
-		<button type="button" onclick="purpFixDemo()">Not Purple</button>
-		<button type="button" onclick="valDemo()">Submit</button>
+		Poke 'Em<br>
+		<button onclick="fugDemo()">Fugly-ify</button>
+		<button onclick="purpDemo()">Purple</button>
+		<button onclick="purpFixDemo()">Not Purple</button>
 	</form>
 	
 	<script>
@@ -92,65 +91,194 @@ function valDemo() {
 			}
 		}
 	</script>
-	
+    </div>
 	<br>
-	<pre>
-		<code>
-function varDemo() {
-	var x = parseInt(document.getElementById("varNum1").value);
-	var y = parseInt(document.getElementById("varNum2").value);
-	var total = x + y;
-	document.getElementById("varOut").innerHTML =
-	"The total is: " + total;
-}
-		</code>
-	</pre>
-	
-<!--	<pre>
-		<code>
-function fugDemo() {
-	document.styleSheets[0].disabled = true;
-	setTimeout(beauDemo, 5000);
+    <br>
+    <br>
+    <div id="stupidDemo">
+        <h3 id="stupid">Stupid Ideas</h3>
+    <img src="blog-harold-02.jpg" alt="Harold Meme" width="608" height="380" id="mememan"/>
+        <br>
+        <span id="pain">We cannot begin to comprehend this man's pain.</span>
+        <br>
+        <br>
+<form accept-charset="utf-8">
+    <button onClick="textColorDemo(pain)">Text Color</button>
+    <button onClick="textSizeDemo(pain)">Text Size</button>
+    <button onClick="marginDemo(stupidDemo)">Padding</button>
+    <button onClick="backColorDemo(stupidDemo)">Background Color</button>
+    <button onClick="fontDemo(pain)">Typeface</button>
+    <button onClick="borderDemo(stupidDemo)">Border</button>
+    <button onClick="alignDemo(pain)">Alignment</button>
+    <button onClick="imageSizeDemo(mememan)">Resize</button>
+    <button onClick="resetDemo(pain, stupidDemo, mememan)">Reset</button>
+</form>
+		<pre><code>
+function textColorDemo(x) {
+    if (x.style.color == "orange" && x.style.backgroundColor == "green") {
+            x.style.removeProperty('color');
+            x.style.removeProperty('background-color');                    
+        } else {
+            x.style.color = "orange";
+            x.style.backgroundColor = "green";
+        }            
 }
 
-function beauDemo() {
-	document.styleSheets[0].disabled = false;
-		}
-		</code>
-	</pre>
-	
-  	<form>
-		Poke It<br>
-		<button type="button" onclick="infoDemo()">CSS Info</button>
-	</form>
-	
-	<script>
-		function infoDemo() {
-			var dump = document.styleSheets[0];
-			document.getElementById("infoOut").innerHTML = dump;			
-		}
+function textSizeDemo(x) {
+    if (x.style.fontSize == "40px") {
+            x.style.removeProperty('font-size');
+        } else {
+            x.style.fontSize = "40px";
+        }            
+}
 
-	</script>
-		
-	<pre id="infoOut">
-Style sheet Info
-	</pre>-->
-	
+function marginDemo(x) {
+    if (x.style.padding == "75px") {
+            x.style.removeProperty('padding');
+        } else {
+            x.style.padding = "75px";
+        }            
+}
+
+function backColorDemo(x) {
+    if (x.style.backgroundColor == "darkorange") {
+            x.style.removeProperty('background-color');
+        } else {
+            x.style.backgroundColor = "darkorange";
+        }            
+}
+
+function fontDemo(x) {
+        if (x.style.fontFamily == "times new roman") {
+            x.style.removeProperty('font-family');
+        } else {
+            x.style.fontFamily = "times new roman";
+        }
+}
+
+function borderDemo(x) {
+    if (x.className == "redborder") {
+            x.classList.remove('redborder');
+        } else {
+            x.classList.add('redborder');
+        }
+}
+
+function alignDemo(x) {
+    if (x.style.textAlign == "left") {
+            x.style.removeProperty('text-align');
+        } else {
+            x.style.textAlign = "left";
+        }
+}
+
+function imageSizeDemo(x) {
+    if (x.style.width == "200px") {
+            x.style.removeProperty('width');
+        } else {
+            x.style.width = "200px";
+        }
+}
+
+function resetDemo(text, box, image) {
+    text.style.removeProperty('color');
+    text.style.removeProperty('background-color'); 
+    text.style.removeProperty('font-size');
+    text.style.removeProperty('font-family');
+    text.style.removeProperty('text-align');
+    box.style.removeProperty('padding');
+    box.style.removeProperty('background-color');
+    box.classList.remove('redborder');
+    image.style.removeProperty('width');
+}
+
+        </code></pre>
+    
+    <script>
+        
+        function textColorDemo(x) {
+            if (x.style.color == "orange" && x.style.backgroundColor == "green") {
+                    x.style.removeProperty('color');
+                    x.style.removeProperty('background-color');                    
+                } else {
+                    x.style.color = "orange";
+                    x.style.backgroundColor = "green";
+                }            
+        }
+
+        function textSizeDemo(x) {
+            if (x.style.fontSize == "40px") {
+                    x.style.removeProperty('font-size');
+                } else {
+                    x.style.fontSize = "40px";
+                }            
+        }
+
+        function marginDemo(x) {
+            if (x.style.padding == "75px") {
+                    x.style.removeProperty('padding');
+                } else {
+                    x.style.padding = "75px";
+                }            
+        }
+
+        function backColorDemo(x) {
+            if (x.style.backgroundColor == "darkorange") {
+                    x.style.removeProperty('background-color');
+                } else {
+                    x.style.backgroundColor = "darkorange";
+                }            
+        }
+                
+        function fontDemo(x) {
+                if (x.style.fontFamily == "times new roman") {
+                    x.style.removeProperty('font-family');
+                } else {
+                    x.style.fontFamily = "times new roman";
+                }
+        }
+
+        function borderDemo(x) {
+            if (x.className == "redborder") {
+                    x.classList.remove('redborder');
+                } else {
+                    x.classList.add('redborder');
+                }
+        }
+
+        function alignDemo(x) {
+            if (x.style.textAlign == "left") {
+                    x.style.removeProperty('text-align');
+                } else {
+                    x.style.textAlign = "left";
+                }
+        }
+
+        function imageSizeDemo(x) {
+            if (x.style.width == "200px") {
+                    x.style.removeProperty('width');
+                } else {
+                    x.style.width = "200px";
+                }
+        }
+        
+        function resetDemo(text, box, image) {
+            text.style.removeProperty('color');
+            text.style.removeProperty('background-color'); 
+            text.style.removeProperty('font-size');
+            text.style.removeProperty('font-family');
+            text.style.removeProperty('text-align');
+            box.style.removeProperty('padding');
+            box.style.removeProperty('background-color');
+            box.classList.remove('redborder');
+            image.style.removeProperty('width');
+        }
+
+    </script>
 	<br>
 	<a href="#top">Back To Top</a>
 </div>
 <br>
-<div>
-	<h3 id="validation">Validations</h3>
-
-		<!-- Add the info for Validations here-->
-</div>
-<br>
-<!--<div>
-	<h3 id="other">Other Uses</h3>-->
-
-		<!-- Add the info for Other Uses here-->
-<!--</div>-->
 <br>
 <!--<div>
 	<h3 id="stupid">Stupid Ideas</h3>-->
