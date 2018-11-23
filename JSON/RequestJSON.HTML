@@ -1,7 +1,7 @@
----
+.---
 layout: default
 ---
-<!--<link href="../style.css" rel="stylesheet" type="text/css">-->
+<link href="../style.css" rel="stylesheet" type="text/css">
 <body>
 	<h1>AJAX Requesting A JSON File</h1>
 	<h4><a href="https://lava84flow.github.io/CIT-261/">Back To Topics</a></h4>
@@ -16,7 +16,76 @@ layout: default
     "Sample.json"
     -->
     
+    <h2>
+    <a href="#local">JSON Requests</a> --- 
+    <a href="#remote">Using someone else's API</a>
+    </h2>
+    <div>
+    <h3 id="local">JSON Requests</h3>
+    <pre>
+    <code>
+function loadJSON() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 &amp;&amp; this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "Sample.json", true)
+  xhttp.send();
+}
+	
+    // Ideally these 3 functions would be loops, but I am no mood to make them loops at this point in time. 
+		
+function printNames() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 &amp;&amp; this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+        document.getElementById("demo").innerHTML = 
+            myObj.dude1.firstName + " " + myObj.dude1.lastName + "&lt;br&gt;" + 
+            myObj.dude2.firstName + " " + myObj.dude2.lastName;
+    }
+  };
+  xhttp.open("GET", "Sample.json", true)
+  xhttp.send();
+
+}
+
+function printHomePhone() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 &amp;&amp; this.status == 200) {
+        var myArr = JSON.parse(this.responseText);
+        document.getElementById("demo").innerHTML = 
+            myArr.dude1.firstName + ": " + myArr.dude1.phoneNumber[0].number + "&lt;br&gt;" +
+            myArr.dude2.firstName + ": " + myArr.dude2.phoneNumber[0].number;
+    }
+  };
+  xhttp.open("GET", "Sample.json", true)
+  xhttp.send();
+
+}
+		
+function printMobilePhone() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 &amp;&amp; this.status == 200) {
+        var myArr = JSON.parse(this.responseText);
+        document.getElementById("demo").innerHTML = 
+            myArr.dude1.firstName + ": " + myArr.dude1.phoneNumber[1].number + "&lt;br&gt;" +
+            myArr.dude2.firstName + ": " + myArr.dude2.phoneNumber[1].number;
+    }
+  };
+  xhttp.open("GET", "Sample.json", true)
+  xhttp.send();
+
+}		
+    </code>
+    </pre>
+    
 	<script>
+        
 function loadJSON() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -24,11 +93,11 @@ function loadJSON() {
       document.getElementById("demo").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "/CIT-261/JSON/Sample.json", true)
+  xhttp.open("GET", "Sample.json", true)
   xhttp.send();
 }
 	
-    // Idealy these 3 functions would be loops, but I am no mood to make them loops at this point in time. 
+    // Ideally these 3 functions would be loops, but I am no mood to make them loops at this point in time. 
 		
 function printNames() {
   var xhttp = new XMLHttpRequest();
@@ -40,7 +109,7 @@ function printNames() {
             myObj.dude2.firstName + " " + myObj.dude2.lastName;
     }
   };
-  xhttp.open("GET", "/CIT-261/JSON/Sample.json", true)
+  xhttp.open("GET", "Sample.json", true)
   xhttp.send();
 
 }
@@ -55,7 +124,7 @@ function printHomePhone() {
             myArr.dude2.firstName + ": " + myArr.dude2.phoneNumber[0].number;
     }
   };
-  xhttp.open("GET", "/CIT-261/JSON/Sample.json", true)
+  xhttp.open("GET", "Sample.json", true)
   xhttp.send();
 
 }
@@ -70,7 +139,7 @@ function printMobilePhone() {
             myArr.dude2.firstName + ": " + myArr.dude2.phoneNumber[1].number;
     }
   };
-  xhttp.open("GET", "/CIT-261/JSON/Sample.json", true)
+  xhttp.open("GET", "Sample.json", true)
   xhttp.send();
 
 }		
@@ -83,6 +152,70 @@ function printMobilePhone() {
 <button type="button" onclick="printMobilePhone()">Get Mobile Phone</button>
 	
 <pre id="demo">Let AJAX change this text.</pre>
+        
+        <a href="#top">Back To Top</a>
+    </div>
 
+    <br>
+    <div>
+        <h3 id="remote">Using someone else's API</h3>
+        <pre>
+        <code>
+function randomXKCD() {
+  var xhttp = new XMLHttpRequest();
+    var rando = Math.floor(Math.random() * 2076)+1;
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 &amp;&amp; this.status == 200) {
+        var XKCD = JSON.parse(this.responseText)
+        document.getElementById("comicTitle").innerHTML = XKCD.safe_title;
+        document.getElementById('comic').src = XKCD.img;
+        document.getElementById('comic').title = XKCD.alt;
+        document.getElementById('comic').alt = XKCD.title;
+        var date = XKCD.day + "/" + XKCD.month + "/" + XKCD.year;
+        document.getElementById('date').innerHTML = "Uploaded On: " + date;
+    }
+  };
+  xhttp.open("GET", "https://xkcd.com/"+rando+"/info.0.json", true)
+  xhttp.send();
+}
+}
+        </code>
+        </pre>
+        <br>
+        <button type="button" onclick="randomXKCD()" style="margin: auto; display: block">See A Comic</button>
+        <script>
+            
+function randomXKCD() {
+  var xhttp = new XMLHttpRequest();
+    var rando = Math.floor(Math.random() * 2076)+1;
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var XKCD = JSON.parse(this.responseText)
+        document.getElementById("comicTitle").innerHTML = XKCD.safe_title;
+        document.getElementById('comic').src = XKCD.img;
+        document.getElementById('comic').title = XKCD.alt;
+        document.getElementById('comic').alt = XKCD.title;
+        var date = XKCD.day + "/" + XKCD.month + "/" + XKCD.year;
+        document.getElementById('date').innerHTML = "Uploaded On: " + date;
+    }
+  };
+  xhttp.open("GET", "https://xkcd.com/"+rando+"/info.0.json", true)
+  xhttp.send();
+}
+        </script>
+        <div style="margin: auto; text-align: center; display: block; padding-top: 10px; min-height: 300px">
+        <h3 id="comicTitle"> </h3>
+        <br>
+            <img id="comic" alt="" style="padding-top: 0">
+            <br>
+            <br>    
+        <span id="date">
+            
+        </span>
+        </div>
+        <br>
+        <a href="#top">Back To Top</a>
+    </div>
+    
 	
 </body>
