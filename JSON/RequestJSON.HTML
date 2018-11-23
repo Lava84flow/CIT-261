@@ -1,11 +1,21 @@
 ---
 layout: default
 ---
-<link href="../style.css" rel="stylesheet" type="text/css">
+<!--<link href="../style.css" rel="stylesheet" type="text/css">-->
 <body>
 	<h1>AJAX Requesting A JSON File</h1>
 	<h4><a href="https://lava84flow.github.io/CIT-261/">Back To Topics</a></h4>
+    <!-- walkthrough video here -->
+	<!--<iframe></iframe>-->
+	<br>
 	
+    <!-- for live build
+    "/CIT-261/JSON/Sample.json"
+    -->
+    <!-- for local build
+    "Sample.json"
+    -->
+    
 	<script>
 function loadJSON() {
   var xhttp = new XMLHttpRequest();
@@ -17,14 +27,17 @@ function loadJSON() {
   xhttp.open("GET", "/CIT-261/JSON/Sample.json", true)
   xhttp.send();
 }
-		
+	
+    // Idealy these 3 functions would be loops, but I am no mood to make them loops at this point in time. 
 		
 function printNames() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var myObj = JSON.parse(this.responseText);
-        document.getElementById("demo").innerHTML = myObj.firstName + " " + myObj.lastName;
+        document.getElementById("demo").innerHTML = 
+            myObj.dude1.firstName + " " + myObj.dude1.lastName + "<br>" + 
+            myObj.dude2.firstName + " " + myObj.dude2.lastName;
     }
   };
   xhttp.open("GET", "/CIT-261/JSON/Sample.json", true)
@@ -37,7 +50,9 @@ function printHomePhone() {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var myArr = JSON.parse(this.responseText);
-        document.getElementById("demo").innerHTML = myArr.phoneNumber[0].type + ": " + myArr.phoneNumber[0].number;
+        document.getElementById("demo").innerHTML = 
+            myArr.dude1.firstName + ": " + myArr.dude1.phoneNumber[0].number + "<br>" +
+            myArr.dude2.firstName + ": " + myArr.dude2.phoneNumber[0].number;
     }
   };
   xhttp.open("GET", "/CIT-261/JSON/Sample.json", true)
@@ -50,7 +65,9 @@ function printMobilePhone() {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var myArr = JSON.parse(this.responseText);
-        document.getElementById("demo").innerHTML = myArr.phoneNumber[1].type + ": " + myArr.phoneNumber[1].number;
+        document.getElementById("demo").innerHTML = 
+            myArr.dude1.firstName + ": " + myArr.dude1.phoneNumber[1].number + "<br>" +
+            myArr.dude2.firstName + ": " + myArr.dude2.phoneNumber[1].number;
     }
   };
   xhttp.open("GET", "/CIT-261/JSON/Sample.json", true)

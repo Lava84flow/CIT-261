@@ -1,4 +1,4 @@
-{
+{"dude1":{
   "firstName": "Kimberley",
   "lastName": "Thomas",
   "age": 28,
@@ -21,4 +21,28 @@
   "gender": {
     "type": "female"
   }
+},"dude2":{
+  "firstName": "Howard",
+  "lastName": "Ramey",
+  "age": 63,
+  "address": {
+    "streetAddress": "4161 Clinton Street",
+    "city": "Little Rock",
+    "state": "AR",
+    "postalCode": "72211"
+  },
+  "phoneNumber": [
+    {
+      "type": "Home",
+      "number": "501-212-7414"
+    },
+    {
+      "type": "Mobile",
+      "number": "501-744-7486"
+    }
+  ],
+  "gender": {
+    "type": "male"
+  }
+}
 }
