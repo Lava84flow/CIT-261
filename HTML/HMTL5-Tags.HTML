@@ -1,12 +1,13 @@
 ---
 layout: default
 ---
-<link href="../style.css" rel="stylesheet" type="text/css">
+<!--<link href="../style.css" rel="stylesheet" type="text/css">-->
+<!--<link href="tags.css" rel="stylesheet" type="text/css">-->
 <body>
 	<h1>HTML5 Tags</h1>
 	<h4><a href="https://lava84flow.github.io/CIT-261/">Back To Topics</a></h4>
     <!-- walkthrough video here -->
-	<iframe></iframe>
+	<!--<iframe></iframe>-->
 	<br>
 
 <!-- Section Template
@@ -41,14 +42,46 @@ function ###Demo() {
 	</pre>
 -->
     
-    <a href="#blargh">blargh</a> --- 
-	<a href="#blargh">blargh</a>
+    <a href="#audio">Audio</a> --- 
+    <a href="#video">Video</a> ---
+    <a href="#canvas">Canvas</a>
     
 <div>
-    <h3 id="blargh">blargh</h3>
+    <h3 id="audio">Audio</h3>
 	
-		<!-- Add the info for Blargh here-->
+		<!-- Add the info for Audio here-->
     	<pre>
+		<code>
+&lt;audio id="audioCon"&gt;
+        &lt;source src="Song of The Lonely Mountain - The Hobbit - Peter Hollens.mp3"&gt;
+        &lt;source src="Song of The Lonely Mountain - The Hobbit - Peter Hollens.ogg"&gt;
+        Your browser does not support the audio element.
+&lt;/audio&gt;
+		</code>
+	</pre>
+	
+    <audio id="audioCon" controls>
+        <source src="Song of The Lonely Mountain - The Hobbit - Peter Hollens.mp3">
+        <source src="Song of The Lonely Mountain - The Hobbit - Peter Hollens.ogg">
+        Your browser does not support the audio element.
+    </audio> 	
+    <br>
+
+    <script>
+
+	</script>
+
+<!--	<pre id="###Out">
+#### Output
+	</pre>-->
+    
+    <a href="#top">Back To Top</a>
+</div>
+<div>
+    <h3 id="video">Video</h3>
+	
+		 <!--Add the info for Video here-->
+  <pre>
 		<code>
 function ###Demo() {
 	var x = parseInt(document.getElementById("###Num1").value);
@@ -58,26 +91,267 @@ function ###Demo() {
 }
 		</code>
 	</pre>
-	
-	<form>
-		Stick number here:<br>
-		<input type="text" id="###Num1">
-		<button type="button" onclick="###Demo()">Submit</button>
-	</form>
-	
-	<script>
-		function ###Demo() {
-			var x = parseInt(document.getElementById("###Num1").value);
-			var out = x + y;
-			document.getElementById("###Out").innerHTML =
-			"####" + ###out;
-		}
+    
+    <p>
+        Now while you can upload and host your own videos...
+    </p>
+    
+    <video width="848" height="480"  controls style="padding-bottom: 15px" poster="https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_CaveStoryPlus_image1600w.jpg">
+        <source src="CaveStory Boss.mp4">
+        <source src="CaveStory Boss_WebM 720p HD.webm">
+        Your browser does not support the video tag.
+    </video>
+
+    <p>
+        The easiest way these days is to just let YouTube do the hosting and embed your video into your page. Also makes it easier to add multiple videos without the ton of JavaScript you need to get video and audio to behave and count multiple files/slash controls. 
+    </p>
+        
+    <iframe width="848" height="480" src="https://www.youtube-nocookie.com/embed/ndsaoMFz9J4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="padding-bottom: 15px"></iframe>
+    <br>
+    
+   	<script>
+        
 	</script>
 
-	<pre id="###Out">
+<!--	<pre id="###Out">
 #### Output
-	</pre>
+	</pre>-->
     
     <a href="#top">Back To Top</a>
 </div>
+<div>
+    <h3 id="canvas">Canvas</h3>
+    <p>Canvas pretty much lets you do what you dang well please within the tag that you would like, think of it as a blank slate, hence the term canvas. Most of-, actually lets make that <strong>all</strong> of the time, you'll be using JavaScript to run and draw the things in your canvases.</p>
+	
+		<!-- Add the info for Canvas here-->
+    	<pre>
+		<code>
+var canvas = document.querySelector('canvas'),
+ctx = canvas.getContext('2d'),
+particles = [],
+patriclesNum = 125,
+w = 300,
+h = 300,
+colors = ['#f35d4f','#f36849','#c0d988','#6ddaf1','#f1e85b'];
+ 
+canvas.width = 300;
+canvas.height = 300;
+canvas.style.left = (window.innerWidth - 300)/2+'px';
+
+if(window.innerHeight&gt;300)
+canvas.style.top = (window.innerHeight - 250)/2+'px';
+  
+function Factory(){  
+      this.x =  Math.round( Math.random() * w);
+      this.y =  Math.round( Math.random() * h);
+      this.rad = Math.round( Math.random() * 1) + 1;
+      this.rgba = colors[ Math.round( Math.random() * 3) ];
+      this.vx = Math.round( Math.random() * 3) - 1.5;
+      this.vy = Math.round( Math.random() * 3) - 1.5;
+}
+   
+function draw(){
+    ctx.clearRect(0, 0, w, h);
+    ctx.globalCompositeOperation = 'lighter';
+        for(var i = 0;i &lt; patriclesNum; i++){
+            var temp = particles[i];
+            var factor = 1;
+     
+            for(var j = 0; j&lt;patriclesNum; j++){
+      
+               var temp2 = particles[j];
+               ctx.linewidth = 0.5;
+      
+               if(temp.rgba == temp2.rgba && findDistance(temp, temp2)&lt;50){
+                  ctx.strokeStyle = temp.rgba;
+                  ctx.beginPath();
+                  ctx.moveTo(temp.x, temp.y);
+                  ctx.lineTo(temp2.x, temp2.y);
+                  ctx.stroke();
+                  factor++;
+               }
+            }
+    
+    
+        ctx.fillStyle = temp.rgba;
+        ctx.strokeStyle = temp.rgba;
+
+        ctx.beginPath();
+        ctx.arc(temp.x, temp.y, temp.rad*factor, 0, Math.PI*2, true);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.arc(temp.x, temp.y, (temp.rad+5)*factor, 0, Math.PI*2, true);
+        ctx.stroke();
+        ctx.closePath();
+
+
+        temp.x += temp.vx;
+        temp.y += temp.vy;
+
+        if(temp.x &gt; w)temp.x = 0;
+        if(temp.x &lt; 0)temp.x = w;
+        if(temp.y &gt; h)temp.y = 0;
+        if(temp.y &lt; 0)temp.y = h;
+      }
+}
+
+function findDistance(p1,p2){  
+      return Math.sqrt( Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2) );
+}
+
+window.requestAnimFrame = (function(){
+  return  window.requestAnimationFrame       ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame    ||
+          function( callback ){
+            window.setTimeout(callback, 1000 / 60);
+          };
+})();
+
+(function init(){
+    for(var i = 0; i &lt; patriclesNum; i++){
+        particles.push(new Factory);
+    }
+})();
+
+(function loop(){
+      draw();
+      requestAnimFrame(loop);
+})();
+		</code>
+	</pre>
+
+     <p>
+  <style>
+         /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+
+        */*{margin:0;padding:0;}body{background:#222;}*/ 
+        canvas{
+            margin-bottom: auto;
+            margin-right: auto
+          position:inherit;
+          border:5px solid rgba(255,255,255,0.1);
+          box-shadow:inset 0 0 100px #4162a9;
+          transform:translateZ(0);
+        }
+    </style>
+  </p>
+     <p>Now, this JavaScript might like a pile of spaghetti, but it can pull off things like this:</p>
+    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>-->
+    <div id="canvasOut">
+      <canvas>Your browser does not support the canvas element.</canvas>
+	</div>
+    <br>
+<p>
+    Which also looks a bit like spaghetti. If you thought Flash and Illustrator vectors where cool, they got nothing on this. 
+    Now, while I might have just grabbed this one out someones Pen repo, that is how coding ends up working quite often, you take a base and build upon it to make it even better. or at least to figure out how the heck it works, which was the case this time. 
+    </p>
+    <p>
+        By the way, here are some other places that I found with some interesting examples, including the one I based this off of: <br>
+        <a href="https://code.tutsplus.com/articles/21-ridiculously-impressive-html5-canvas-experiments--net-14210"> HTML5 Canvas Experiments</a>
+        <br>
+        <a href="">Mind-Blowing Canvas Demos</a>
+
+    <script>
+        var   canvas = document.querySelector('canvas'),
+         ctx = canvas.getContext('2d'),
+   particles = [],
+patriclesNum = 125,
+           w = 300,
+           h = 300,
+      colors = ['#f35d4f','#f36849','#c0d988','#6ddaf1','#f1e85b'];
+ 
+canvas.width = 300;
+canvas.height = 300;
+canvas.style.left = (window.innerWidth - 300)/2+'px';
+
+if(window.innerHeight>300)
+canvas.style.top = (window.innerHeight - 250)/2+'px';
+  
+function Factory(){  
+  this.x =  Math.round( Math.random() * w);
+  this.y =  Math.round( Math.random() * h);
+  this.rad = Math.round( Math.random() * 1) + 1;
+  this.rgba = colors[ Math.round( Math.random() * 3) ];
+  this.vx = Math.round( Math.random() * 3) - 1.5;
+  this.vy = Math.round( Math.random() * 3) - 1.5;
+}
+   
+function draw(){
+  ctx.clearRect(0, 0, w, h);
+  ctx.globalCompositeOperation = 'lighter';
+  for(var i = 0;i < patriclesNum; i++){
+    var temp = particles[i];
+    var factor = 1;
+     
+    for(var j = 0; j<patriclesNum; j++){
+      
+       var temp2 = particles[j];
+       ctx.linewidth = 0.5;
+      
+       if(temp.rgba == temp2.rgba && findDistance(temp, temp2)<25){
+          ctx.strokeStyle = temp.rgba;
+          ctx.beginPath();
+          ctx.moveTo(temp.x, temp.y);
+          ctx.lineTo(temp2.x, temp2.y);
+          ctx.stroke();
+          factor++;
+       }
+    }
+    
+    
+    ctx.fillStyle = temp.rgba;
+    ctx.strokeStyle = temp.rgba;
+    
+    ctx.beginPath();
+    ctx.arc(temp.x, temp.y, temp.rad*factor, 0, Math.PI*2, true);
+    ctx.fill();
+    ctx.closePath();
+    
+    ctx.beginPath();
+    ctx.arc(temp.x, temp.y, (temp.rad+5)*factor, 0, Math.PI*2, true);
+    ctx.stroke();
+    ctx.closePath();
+    
+
+    temp.x += temp.vx;
+    temp.y += temp.vy;
+    
+    if(temp.x > w)temp.x = 0;
+    if(temp.x < 0)temp.x = w;
+    if(temp.y > h)temp.y = 0;
+    if(temp.y < 0)temp.y = h;
+  }
+}
+
+function findDistance(p1,p2){  
+  return Math.sqrt( Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2) );
+}
+
+window.requestAnimFrame = (function(){
+  return  window.requestAnimationFrame       ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame    ||
+          function( callback ){
+            window.setTimeout(callback, 1000 / 60);
+          };
+})();
+
+(function init(){
+  for(var i = 0; i < patriclesNum; i++){
+    particles.push(new Factory);
+  }
+})();
+
+(function loop(){
+  draw();
+  requestAnimFrame(loop);
+})();
+    </script>
+    <!--<script  src="js/index.js"></script>-->
+    
+  <p>  <a href="#top">Back To Top</a>  </div>
 </body>
