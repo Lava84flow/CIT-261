@@ -1,12 +1,12 @@
 ---
 layout: default
 ---
-<link href="../style.css" rel="stylesheet" type="text/css">
+<!--<link href="../style.css" rel="stylesheet" type="text/css">-->
 <body>
 	<h1>LocalStorage API</h1>
 	<h4><a href="https://lava84flow.github.io/CIT-261/">Back To Topics</a></h4>
     <!-- walkthrough video here -->
-	<iframe></iframe>
+	<!--<iframe></iframe>-->
 	<br>
 
 <!-- Section Template
@@ -40,43 +40,139 @@ function ###Demo() {
 #### Output
 	</pre>
 -->
-    
-    <a href="#blargh">blargh</a> --- 
-	<a href="#blargh">blargh</a>
-    
+<!--    <h2>
+    <a href="#blargh">blargh</a> 
+    </h2>-->
 <div>
-    <h3 id="blargh">blargh</h3>
+<!--    <h3 id="blargh">blargh</h3>-->
 	
 		<!-- Add the info for Blargh here-->
     	<pre>
 		<code>
-function ###Demo() {
-	var x = parseInt(document.getElementById("###Num1").value);
-	var ###out = x;
-	document.getElementById("###Out").innerHTML =
-	"####" + ###out;
+function getInfo() {
+    var name = document.getElementById("name").value;
+    var fruit = document.getElementById("fruits").value;
+    //console.log(name, fruit);
+    var dude = {name: name, fruit: fruit};
+    //console.log(dude);
+    //console.log(JSON.stringify(dude));
+
+    save(JSON.stringify(dude));
+
 }
+
+function save(Object){
+    if (typeof(Storage) !== "undefined") {
+        localStorage.dude = Object;
+        var saved = JSON.parse(localStorage.getItem("dude"));
+        document.getElementById("localOut").innerHTML = "Your Name is " + saved.name + " and you like " + saved.fruit + ".";
+        //console.log(localStorage.dude);
+        } else {
+            window.alert("Sorry, your browser does not support Web Storage...");
+    }
+}
+
+
+function deleteLocal() {
+    localStorage.removeItem('dude');
+    location.reload();
+}
+              
+        
+function clickCounter() {
+    if(typeof(Storage) !== "undefined") {
+        if (sessionStorage.clickcount) {
+            sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+        } else {
+            sessionStorage.clickcount = 1;
+        }
+        document.getElementById("clickLand").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
+    } else {
+        document.getElementById("clickLand").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+
+function printSaved() {
+            if (localStorage != undefined)
+                var saved = JSON.parse(localStorage.getItem("dude"));
+                document.getElementById("localOut").innerHTML = "Your Name is " + saved.name + " and you like " + saved.fruit + ".";
+        }
 		</code>
 	</pre>
 	
 	<form>
-		Stick number here:<br>
-		<input type="text" id="###Num1">
-		<button type="button" onclick="###Demo()">Submit</button>
+		Fill these out and hit that button:<br>
+		Your Name: <input type="text" id="name"><br>
+		Favorite Fruit: <input type="text" id="fruits"><br>
+		<button type="button" onclick="getInfo()">Submit</button>
+        <button type="button" onclick="deleteLocal()">Reset</button>
 	</form>
 	
 	<script>
-		function ###Demo() {
-			var x = parseInt(document.getElementById("###Num1").value);
-			var out = x + y;
-			document.getElementById("###Out").innerHTML =
-			"####" + ###out;
+		function getInfo() {
+			var name = document.getElementById("name").value;
+			var fruit = document.getElementById("fruits").value;
+			//console.log(name, fruit);
+            var dude = {name: name, fruit: fruit};
+            //console.log(dude);
+            //console.log(JSON.stringify(dude));
+            
+            save(JSON.stringify(dude));
+            
+
 		}
+        
+        function save(Object){
+            if (typeof(Storage) !== "undefined") {
+                localStorage.dude = Object;
+                var saved = JSON.parse(localStorage.getItem("dude"));
+                document.getElementById("localOut").innerHTML = "Your Name is " + saved.name + " and you like " + saved.fruit + ".";
+                //console.log(localStorage.dude);
+                } else {
+                    window.alert("Sorry, your browser does not support Web Storage...");
+            }
+        }
+        
+        
+        function deleteLocal() {
+            localStorage.removeItem('dude');
+            location.reload();
+        }
+              
+        
+function clickCounter() {
+    if(typeof(Storage) !== "undefined") {
+        if (sessionStorage.clickcount) {
+            sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+        } else {
+            sessionStorage.clickcount = 1;
+        }
+        document.getElementById("clickLand").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
+    } else {
+        document.getElementById("clickLand").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+
+        
+    // Retrieve
+
+
 	</script>
 
-	<pre id="###Out">
-#### Output
+	<pre id="localOut">
+Storage Output
 	</pre>
+    <script>
+        printSaved();
+        
+        function printSaved() {
+            if (localStorage != undefined)
+                var saved = JSON.parse(localStorage.getItem("dude"));
+                document.getElementById("localOut").innerHTML = "Your Name is " + saved.name + " and you like " + saved.fruit + ".";
+        }
+    </script>
+        <p>Click this button until you are bored:<button onclick="clickCounter()" type="button">Do It!</button></p>
+    <p id="clickLand"></p>
     
     <a href="#top">Back To Top</a>
 </div>
