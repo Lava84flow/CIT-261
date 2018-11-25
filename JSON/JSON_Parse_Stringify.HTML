@@ -110,7 +110,7 @@ function stringify() {
               document.getElementById(output.id).innerHTML = myObj.quiz.sport.q1.question + '<br>' + myObj.quiz.maths.q1.question + '<br>' + myObj.quiz.maths.q2.question;
             }
           };
-          xhttp.open("GET", "CIT-261/JSON/example_2.json", true);
+          xhttp.open("GET", "example_2.json", true);
           xhttp.send();
         }
         
@@ -121,7 +121,7 @@ function stringify() {
               document.getElementById(output.id).innerHTML = this.responseText;
                 }
             };
-              xhttp.open("GET", "CIT-261/JSON/example_2.json", true);
+              xhttp.open("GET", "example_2.json", true);
               xhttp.send();
         }
         
@@ -134,7 +134,7 @@ function stringify() {
               document.getElementById(output.id).innerHTML = stringTime ;
                 }
             };
-              xhttp.open("GET", "CIT-261/JSON/example_2.json", true);
+              xhttp.open("GET", "example_2.json", true);
               xhttp.send();
         }
         
