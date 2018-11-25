@@ -3,12 +3,14 @@ layout: default
 ---
 <link href="../style.css" rel="stylesheet" type="text/css">
 <body>
-	<h1>JSON Parse And Stingify</h1>
+	<h1>JSON Parse And Stringify</h1>
 	<h4><a href="https://lava84flow.github.io/CIT-261/">Back To Topics</a></h4>
     <!-- walkthrough video here -->
-	<iframe></iframe>
+	<!--<iframe></iframe>-->
 	<br>
 
+    
+    <p>So, turns out, when you need to exchange JSON data to the server, it must always be sent and received as a string. Thankfully, someone already did the hard part of proper conversion, and all we have to do is call the JSON.Parse and JSON.Stringify functions. </p>
 <!-- Section Template
 	<pre>
 		<code>
@@ -40,44 +42,122 @@ function ###Demo() {
 #### Output
 	</pre>
 -->
-    
+<!--    
+    <h2>
     <a href="#blargh">blargh</a> --- 
 	<a href="#blargh">blargh</a>
-    
+    </h2>
+    -->
 <div>
-    <h3 id="blargh">blargh</h3>
+    <!--<h3 id="blargh">blargh</h3>-->
 	
 		<!-- Add the info for Blargh here-->
     	<pre>
 		<code>
-function ###Demo() {
-	var x = parseInt(document.getElementById("###Num1").value);
-	var ###out = x;
-	document.getElementById("###Out").innerHTML =
-	"####" + ###out;
+function parse() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 &amp;&amp; this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+      document.getElementById("JSONOut").innerHTML = myObj.quiz.sport.q1.question + '<br>' + myObj.quiz.maths.q1.question + '<br>' + myObj.quiz.maths.q2.question;
+    }
+  };
+  xhttp.open("GET", "example_2.json", true);
+  xhttp.send();
 }
+
+function read() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 &amp;&amp; this.status == 200) {
+      document.getElementById("JSONOut").innerHTML = this.responseText;
+        }
+    };
+      xhttp.open("GET", "example_2.json", true);
+      xhttp.send();
+}
+
+function stringify() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 &amp;&amp; this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+        var stringTime = JSON.stringify(myObj);
+      document.getElementById("JSONOut").innerHTML = stringTime ;
+        }
+    };
+      xhttp.open("GET", "example_2.json", true);
+      xhttp.send();
+}
+        
 		</code>
 	</pre>
 	
 	<form>
-		Stick number here:<br>
-		<input type="text" id="###Num1">
-		<button type="button" onclick="###Demo()">Submit</button>
+		Click the buttons in order, after that, keep reading.<br>
+        <button type="button" onclick="read(JSONOut)">Retrieve JSON</button>
+		<button type="button" onclick="parse(JSONOut)">Parse JSON</button>
+		<button type="button" onclick="stringify(JSONOut)">Stringify JSON for 'Sending'</button>
 	</form>
 	
 	<script>
-		function ###Demo() {
-			var x = parseInt(document.getElementById("###Num1").value);
-			var out = x + y;
-			document.getElementById("###Out").innerHTML =
-			"####" + ###out;
-		}
+        
+		function parse(output) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var myObj = JSON.parse(this.responseText);
+              document.getElementById(output.id).innerHTML = myObj.quiz.sport.q1.question + '<br>' + myObj.quiz.maths.q1.question + '<br>' + myObj.quiz.maths.q2.question;
+            }
+          };
+          xhttp.open("GET", "example_2.json", true);
+          xhttp.send();
+        }
+        
+        function read(output) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById(output.id).innerHTML = this.responseText;
+                }
+            };
+              xhttp.open("GET", "example_2.json", true);
+              xhttp.send();
+        }
+        
+        function stringify(output) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var myObj = JSON.parse(this.responseText);
+                var stringTime = JSON.stringify(myObj);
+              document.getElementById(output.id).innerHTML = stringTime ;
+                }
+            };
+              xhttp.open("GET", "example_2.json", true);
+              xhttp.send();
+        }
+        
 	</script>
 
-	<pre id="###Out">
-#### Output
+	<pre id="JSONOut">
+JSON Output
 	</pre>
     
+    <p>
+        So, now that you've seen them in action let's step through them a bit. The first one displays the the raw data we just retrieved from the server:
+    </p>
+    
+    <pre id="readOut"></pre>
+    <p>
+        After we use that JSON.Parse we mentioned to turn it back into a JavaScript Object for all that fancy manipulation you want to do:
+    </p>
+    <pre id="parseOut"></pre>
+    <p>
+        When you all all done with whatever fancy stuff you would like to do, from changing or adding data, and everything in between, we stringify it with JSON.Stringify to get it ready for sending back to the server, at which point it's out of your hands, or at least that instance of the site's hands. 
+    </p>
+    <pre id="stringOut"></pre>
+    <script>read(readOut); parse(parseOut); stringify(stringOut);</script>
     <a href="#top">Back To Top</a>
 </div>
     
