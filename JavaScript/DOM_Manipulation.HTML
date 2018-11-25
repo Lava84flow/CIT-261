@@ -1,12 +1,12 @@
 ---
 layout: default
 ---
-<link href="../style.css" rel="stylesheet" type="text/css">
+<!--<link href="../style.css" rel="stylesheet" type="text/css">-->
 <body>
 	<h1>DOM Manipulation</h1>
 	<h4><a href="https://lava84flow.github.io/CIT-261/">Back To Topics</a></h4>
     <!-- walkthrough video here -->
-	<iframe></iframe>
+	<!--<iframe></iframe>-->
 	<br>
 
 <!-- Section Template
@@ -40,44 +40,123 @@ function ###Demo() {
 #### Output
 	</pre>
 -->
-    
+    <!--<h2>
     <a href="#blargh">blargh</a> --- 
 	<a href="#blargh">blargh</a>
+    </h2>-->
     
 <div>
-    <h3 id="blargh">blargh</h3>
+    <!--<h3 id="blargh">blargh</h3>-->
 	
 		<!-- Add the info for Blargh here-->
     	<pre>
 		<code>
-function ###Demo() {
-	var x = parseInt(document.getElementById("###Num1").value);
-	var ###out = x;
-	document.getElementById("###Out").innerHTML =
-	"####" + ###out;
+function rando() {         
+    var fruits = ["Bananas", "Oranges", "Apples", "Mangos", "Watermelons", "Dragonfruit",<br> "Grapes", "Pears", "Pumpkins", "Elderberries", "Papayas", <br>"Salmonberries", "Huckleberries", "Apricots", "Avocado", "Peaches", "Chilies",<br> "Honeydews", "Jujubes", "Figs", "Jackfruit", "Nectarines", "Pineapples", "Strawberries", "Limes"];
+    var pick = Math.floor(Math.random() * fruits.length);
+    return fruits[pick];
+}
+function append() {
+    var node = document.createTextNode(rando() + ", "),
+    pre = document.getElementById("domOut");
+
+    pre.append(node);
+}
+function prepend() {
+    var node = document.createTextNode(rando() + ", "),
+    pre = document.getElementById("domOut");
+
+    pre.prepend(node);
+}
+function insert() {
+    var para = document.createElement("p");
+    var node = document.createTextNode("Your friend found some " + rando() + ". ");
+    para.appendChild(node);
+
+    var element = document.getElementById("domDiv");
+    var child = document.getElementById("domOut");
+    element.insertBefore(para,child);
+}   
+
+function create() {
+    var para = document.createElement("p");
+    var node = document.createTextNode("You found some " + rando() + ".");
+    para.append(node);
+
+    var element = document.getElementById("domDiv");
+    element.append(para);
+}
+function remove() {
+    var parent = document.getElementById("domOut");
+    var child = document.getElementById("pre");
+    parent.remove(child);
 }
 		</code>
 	</pre>
 	
 	<form>
-		Stick number here:<br>
-		<input type="text" id="###Num1">
-		<button type="button" onclick="###Demo()">Submit</button>
+		Click the buttons:<br>
+		<button type="button" onclick="append()">Append</button>
+		<button type="button" onclick="prepend()">Prepend</button>
+		<button type="button" onclick="insert()">Insert</button>
+		<button type="button" onclick="create()">Create</button>
+		<button type="button" onclick="remove()">Remove Pre Section</button>
+        <button type="button" onClick="window.location.reload()">Reset</button>
 	</form>
 	
-	<script>
-		function ###Demo() {
-			var x = parseInt(document.getElementById("###Num1").value);
-			var out = x + y;
-			document.getElementById("###Out").innerHTML =
-			"####" + ###out;
-		}
-	</script>
 
-	<pre id="###Out">
-#### Output
-	</pre>
     
+<div id="domDiv">
+<pre id="domOut">
+
+DOM Output
+</pre>
+    </div>
+    <script>
+        //createElement, appendChild, insertBefore, removeChild, etc.
+        function rando() {         
+            var fruits = ["Bananas", "Oranges", "Apples", "Mangos", "Watermelons", "Dragonfruit", "Grapes", "Pears", "Pumpkins", "Elderberries", "Papayas", "Salmonberries", "Huckleberries", "Apricots", "Avocado", "Peaches", "Chilies", "Honeydews", "Jujubes", "Figs", "Jackfruit", "Nectarines", "Pineapples", "Strawberries", "Limes"];
+            var pick = Math.floor(Math.random() * fruits.length);
+            return fruits[pick];
+        }
+        function append() {
+            var node = document.createTextNode(rando() + ", "),
+            pre = document.getElementById("domOut");
+
+            pre.append(node);
+        }
+        function prepend() {
+            var node = document.createTextNode(rando() + ", "),
+            pre = document.getElementById("domOut");
+
+            pre.prepend(node);
+        }
+        function insert() {
+            var para = document.createElement("p");
+            var node = document.createTextNode("Your friend found some " + rando() + ". ");
+            para.appendChild(node);
+
+            var element = document.getElementById("domDiv");
+            var child = document.getElementById("domOut");
+            element.insertBefore(para,child);
+        }   
+        
+        function create() {
+            var para = document.createElement("p");
+            var node = document.createTextNode("You found some " + rando() + ".");
+            para.append(node);
+
+            var element = document.getElementById("domDiv");
+            element.append(para);
+        }
+        function remove() {
+            var parent = document.getElementById("domOut");
+            var child = document.getElementById("pre");
+            parent.remove(child);
+        }
+        
+        
+    </script>
     <a href="#top">Back To Top</a>
 </div>
 
