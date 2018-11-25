@@ -185,6 +185,7 @@ function randomXKCD() {
         <button type="button" onclick="randomXKCD()" style="margin: auto; display: block">See A Comic</button>
         <script>
             //can only get this to half works. it works in dreamweaver and if i use an extension that disables CORS. can't figure out to make cors headers behave
+            // fainlly figured out what i need to do, change this to a padded json pull. mainly cause their servers don't send the right CORS headers. not going to happen anytime soon though.
     
 function randomXKCD() {
   var xhttp = new XMLHttpRequest();
@@ -198,7 +199,7 @@ function randomXKCD() {
         document.getElementById('comic').title = XKCD.alt;
         document.getElementById('comic').alt = XKCD.title;
         var date = XKCD.day + "/" + XKCD.month + "/" + XKCD.year;
-        document.getElementById('date').innerHTML = "Uploaded On: " + date;
+        document.getElementById('date').innerHTML = "Uploaded On: " + date + "<br><a href=\"https://www.xkcd.com/\">XKCD</a>";
     }
       
   };
@@ -213,6 +214,7 @@ function randomXKCD() {
         <br>
             <img id="comic" alt="" style="padding-top: 0">
             <br>
+            <!--<img alt="" src="https://imgs.xkcd.com/comics/horror_movies_2.png">-->
             <br>    
         <span id="date">
             
