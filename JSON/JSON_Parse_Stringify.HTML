@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<link href="../style.css" rel="stylesheet" type="text/css">
+<!--<link href="../style.css" rel="stylesheet" type="text/css">-->
 <body>
 	<h1>JSON Parse And Stringify</h1>
 	<h4><a href="https://lava84flow.github.io/CIT-261/">Back To Topics</a></h4>
@@ -110,7 +110,7 @@ function stringify() {
               document.getElementById(output.id).innerHTML = myObj.quiz.sport.q1.question + '<br>' + myObj.quiz.maths.q1.question + '<br>' + myObj.quiz.maths.q2.question;
             }
           };
-          xhttp.open("GET", "example_2.json", true);
+          xhttp.open("GET", "CIT-261/JSON/example_2.json", true);
           xhttp.send();
         }
         
@@ -121,7 +121,7 @@ function stringify() {
               document.getElementById(output.id).innerHTML = this.responseText;
                 }
             };
-              xhttp.open("GET", "example_2.json", true);
+              xhttp.open("GET", "CIT-261/JSON/example_2.json", true);
               xhttp.send();
         }
         
@@ -134,7 +134,7 @@ function stringify() {
               document.getElementById(output.id).innerHTML = stringTime ;
                 }
             };
-              xhttp.open("GET", "example_2.json", true);
+              xhttp.open("GET", "CIT-261/JSON/example_2.json", true);
               xhttp.send();
         }
         
