@@ -24,7 +24,7 @@
 [Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events](https://lava84flow.github.io/CIT-261/JavaScript/JS_Standard_Events.HTML)
 
 
-[HTML5 Tags - Video, Audio, and Canvas](https://lava84flow.github.io/CIT-261//HTML/HMTL5-Tags.HTML)
+[HTML5 Tags - Video, Audio, and Canvas](https://lava84flow.github.io/CIT-261//HTML/HTML5-Tags.HTML)
 
 
 [Designing, Defining, and Triggering CSS3 Animations without Custom Libraries](https://lava84flow.github.io/CIT-261/CSS/CSS3-Animations.HTML)
