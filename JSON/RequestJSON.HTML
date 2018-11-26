@@ -182,6 +182,9 @@ function randomXKCD() {
         </code>
         </pre>
         <br>
+        <p>
+        Sadly this only half works because the API I'm pulling from did not implement CORS response headers properly, which, as you may or may not know, is not something I truly have any say over for getting it fixed. While there are way ways around it with JSON padding, I haven't truly figured out how to make that work just yet, so I suggest you grab the <a href="https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/">CORS Everywhere</a>(Firefox) or <a href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en">Allow-Control-Allow-Origin: *</a>(Chrome) Extensions for now. I'll probably get this to behave properly at some point down the line. 
+        </p>
         <button type="button" onclick="randomXKCD()" style="margin: auto; display: block">See A Comic</button>
         <script>
             //can only get this to half works. it works in dreamweaver and if i use an extension that disables CORS. can't figure out to make cors headers behave
@@ -209,6 +212,8 @@ function randomXKCD() {
   xhttp.send();
 }
         </script>
+        
+        
         <div style="margin: auto; text-align: center; display: block; padding-top: 10px; min-height: 300px">
         <h3 id="comicTitle"> </h3>
         <br>
